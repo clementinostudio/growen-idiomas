@@ -137,9 +137,11 @@ const App: React.FC = () => {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <a href="#" onClick={scrollToTop} className="flex items-center gap-3 group cursor-pointer">
-              <div className="w-8 h-8 rounded-full border border-green-500 flex items-center justify-center group-hover:bg-green-500/10 transition-colors">
-                 <span className="text-green-500 text-xs">∞</span> 
-              </div>
+              <img 
+                src="/logo/Logo-8.png" 
+                alt="Growen Idiomas Logo" 
+                className="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
+              />
               <span className={`font-medium text-lg tracking-wide group-hover:text-green-600 transition-colors ${navLogoClass}`}>Growen Idiomas</span>
             </a>
             
