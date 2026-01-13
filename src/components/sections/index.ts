@@ -1,0 +1,9 @@
+export { HeroSection } from './HeroSection';
+export { IdentificationSection } from './IdentificationSection';
+export { MethodologySection } from './MethodologySection';
+export { AboutSection } from './AboutSection';
+export { VisionSection } from './VisionSection';
+export { StepsSection } from './StepsSection';
+export { TestimonialsSection } from './TestimonialsSection';
+export { FAQSection } from './FAQSection';
+export { CTASection } from './CTASection';
