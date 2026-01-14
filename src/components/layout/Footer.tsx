@@ -13,13 +13,20 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-full border border-gray-900 flex items-center justify-center">
-                <span className="font-bold text-gray-900 text-xs">∞</span>
+            <div className="flex items-center gap-3 mb-6">
+              <img
+                src="/arquivos/logoGrowen.svg"
+                alt="Growen"
+                className="w-10 h-auto"
+              />
+              <div>
+                <span className="block text-2xl font-satoshi font-black tracking-tighter text-gray-900">
+                  Growen
+                </span>
+                <span className="block ml-1 text-[10px] tracking-[0.4em] text-gray-400 font-bold uppercase">
+                  Idiomas
+                </span>
               </div>
-              <span className="font-bold text-xl font-satoshi text-gray-900">
-                Growen
-              </span>
             </div>
             <p className="text-gray-500 text-sm max-w-xs leading-relaxed">
               Revolucionando o ensino de idiomas com foco em conversação real e

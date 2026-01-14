@@ -12,87 +12,102 @@ export const MethodologySection: React.FC = () => {
     {
       icon: SlidersHorizontal,
       title: 'Flexibilidade Total',
-      description: 'Aulas que se adaptam a você e ao seu ritmo, não o contrário.',
+      description:
+        'As aulas se adaptam à sua rotina, nível e objetivos — nunca o contrário.',
     },
     {
       icon: Zap,
-      title: 'Aprendizado Rápido',
-      description: 'Evolução natural, acelerada e focada em resultados reais.',
+      title: 'Evolução Acelerada',
+      description:
+        'Você avança de forma natural, sem travar e sem perder tempo com o que não usa.',
     },
     {
       icon: Target,
-      title: 'Conteúdo Relevante',
+      title: 'Conteúdo que Faz Sentido',
       description:
-        'Você aprende o que realmente importa para a sua realidade.',
+        'Nada de inglês genérico. Você aprende o que realmente usa no dia a dia.',
     },
     {
       icon: MessageSquare,
-      title: 'Foco Prático',
-      description: '100% focado na comunicação e na conversação real.',
+      title: 'Conversação de Verdade',
+      description:
+        'Desde o início, o foco é falar, errar, corrigir e ganhar confiança.',
     },
   ];
 
   return (
-    <section id="solucoes" className="py-24 md:py-32 bg-white relative">
+    <section
+      id="solucoes"
+      className="py-28 md:py-32 bg-white relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          {/* Left Side: Philosophy */}
+
+          {/* LEFT: PHILOSOPHY */}
           <div className="lg:col-span-5">
             <Reveal>
-              <h2 className="text-4xl md:text-5xl font-satoshi font-bold text-gray-900 mb-8 tracking-tight leading-tight">
-                O Poder de Nossa Metodologia
+              <h2 className="text-4xl md:text-5xl font-satoshi font-bold text-gray-900 mb-10 tracking-tight leading-tight">
+                Uma metodologia feita para quem quer{' '}
+                <span className="text-[#22c55e]">falar inglês</span>,
+                <br />
+                não decorar regras
               </h2>
             </Reveal>
 
-            <Reveal
-              delay={200}
-              className="text-lg text-gray-600 leading-relaxed space-y-8 font-light"
-            >
-              <p>
-                Na Growen, não acreditamos em métodos engessados. Acreditamos em
-                estratégia. Utilizamos o{' '}
-                <span className="text-gray-900 font-medium">Pós-Método</span>:
-                antes de ensinar, nós entendemos você.
+            <Reveal delay={200} className="space-y-8">
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Aqui, você não segue um método engessado. Antes de ensinar,
+                entendemos você: seu nível, seus objetivos e sua rotina.
               </p>
-              <p>
-                Seu nível, seus objetivos e sua rotina definem o caminho.
-                Combinamos as técnicas mais eficazes para o seu desenvolvimento.
-                O resultado é simples:{' '}
-                <strong className="text-gray-900 font-bold">
-                  menos tempo estudando, mais tempo falando.
-                </strong>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                A partir disso, combinamos estratégias e técnicas que realmente
+                funcionam para o seu perfil. O resultado é simples e direto:
+              </p>
+
+              <p className="text-xl font-satoshi font-bold text-gray-900">
+                Menos tempo estudando.
+                <br />
+                <span className="text-[#22c55e]">
+                  Mais tempo falando inglês.
+                </span>
               </p>
             </Reveal>
           </div>
 
-          {/* Right Side: Pillars */}
+          {/* RIGHT: PILLARS */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <div className="flex flex-col">
               {pillars.map((pillar, index) => (
                 <Reveal
                   key={index}
                   delay={300 + index * 100}
-                  className="group border-t border-gray-100 py-8 flex gap-6 transition-all hover:pl-4"
+                  className="group border-t border-gray-100 py-8 flex gap-6 transition-all duration-300 hover:pl-4"
                 >
+                  {/* Icon */}
                   <div className="shrink-0 pt-1">
                     <pillar.icon
                       className="w-6 h-6 text-[#22c55e]"
                       strokeWidth={1.5}
                     />
                   </div>
+
+                  {/* Text */}
                   <div>
-                    <h3 className="font-bold text-gray-900 text-xl mb-2 font-satoshi">
+                    <h3 className="font-satoshi font-semibold text-gray-900 text-lg mb-1">
                       {pillar.title}
                     </h3>
-                    <p className="text-gray-500 leading-relaxed text-base">
+                    <p className="text-gray-500 leading-relaxed text-base max-w-xl">
                       {pillar.description}
                     </p>
                   </div>
                 </Reveal>
               ))}
-              <div className="border-t border-b border-gray-100" />
+
+              <div className="border-t border-gray-100" />
             </div>
           </div>
+
         </div>
       </div>
     </section>
