@@ -40,8 +40,8 @@ export const MethodologySection: React.FC = () => {
       id="solucoes"
       className="py-28 md:py-32 bg-white relative overflow-hidden"
     >
-      {/* Container com padding lateral igual ao IdentificationSection */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 relative z-10">
+      {/* Container com lateral maior no mobile */}
+      <div className="max-w-7xl mx-auto px-10 sm:px-12 md:px-12 lg:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
           {/* LEFT: PHILOSOPHY */}
