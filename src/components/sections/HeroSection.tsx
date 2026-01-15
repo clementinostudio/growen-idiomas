@@ -8,25 +8,55 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden min-h-[90vh] flex items-center bg-[#050505]">
-      {/* Background Overlay */}
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-[#050505]">
+
+      {/* BACKGROUND OVERLAYS */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 z-20" />
+        {/* Degradê lateral */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
+
+        {/* Degradê inferior */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+
+        {/* PONTINHOS – MENORES, MAIS ESPAÇADOS E MAIS OPACOS */}
+        <div className="absolute inset-0 opacity-[0.1] bg-[radial-gradient(circle_at_2px_2px,#fff_1px,transparent_0)] bg-[size:42px_42px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+      {/* LOGO DECORATIVA PARCIAL – INFERIOR ESQUERDO */}
+      <div className="absolute -bottom-28 -left-28 z-10 pointer-events-none select-none">
+        <img
+          src="/arquivos/logoGrowen.svg"
+          alt=""
+          className="w-[360px] opacity-30"
+        />
+      </div>
+
+      {/* LOGO DECORATIVA PARCIAL – SUPERIOR DIREITO */}
+      <div className="absolute -top-24 -right-28 z-10 pointer-events-none select-none hidden lg:block">
+        <img
+          src="/arquivos/logoGrowen.svg"
+          alt=""
+          className="w-[420px] opacity-70"
+          style={{
+            transform: 'rotate(180deg)',
+            maskImage: 'linear-gradient(315deg, black 60%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(315deg, black 60%, transparent 100%)',
+          }}
+        />
+      </div>
+
+      {/* CONTAINER */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 md:py-24 relative z-30">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* LEFT CONTENT */}
-          <div className="relative flex flex-col items-start text-left h-full">
-            {/* Decorative Background */}
+          <div className="relative flex flex-col items-start text-left">
             <div
-              className="hidden sm:block absolute -bottom-40 -left-8 w-[640px] h-[640px] bg-cover bg-center bg-no-repeat opacity-30 pointer-events-none z-10 rounded-md"
+              className="hidden sm:block absolute -bottom-40 -left-8 w-[640px] h-[640px] bg-cover bg-center bg-no-repeat opacity-25 pointer-events-none z-0 rounded-md"
               style={{ backgroundImage: "url('/arquivos/fundo.png')" }}
             />
 
-            <div className="relative z-20 space-y-6">
-              {/* Brand */}
+            <div className="relative z-10 space-y-6">
               <Reveal>
                 <div className="mb-2">
                   <h2 className="text-4xl font-satoshi font-black tracking-tighter text-white leading-none">
@@ -38,9 +68,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                 </div>
               </Reveal>
 
-              {/* Headline */}
               <Reveal delay={200}>
-                <h1 className="text-5xl md:text-7xl font-satoshi font-extrabold md:font-bold leading-[1.05] tracking-tight text-white">
+                <h1 className="text-5xl md:text-7xl font-satoshi font-bold leading-[1.05] tracking-tight text-white">
                   <span className="block text-[#22c55e]">
                     Pare de estudar inglês.
                   </span>
@@ -50,15 +79,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                 </h1>
               </Reveal>
 
-              {/* Subheadline */}
               <Reveal delay={400}>
-                <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed font-questrial font-normal">
+                <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed font-questrial">
                   Aulas focadas em conversação real, feitas para quem já estudou,
                   mas ainda não consegue falar inglês com confiança.
                 </p>
               </Reveal>
 
-              {/* CTA */}
               <Reveal delay={600} className="pt-6">
                 <button
                   onClick={onCTAClick}
@@ -72,7 +99,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                   </div>
                 </button>
 
-                {/* Proof + Risk Reversal */}
                 <div className="mt-4 space-y-1">
                   <div className="flex items-center gap-2 text-sm text-gray-400">
                     <span className="text-[#22c55e] font-bold">+300 alunos</span>
@@ -87,33 +113,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="relative flex justify-center lg:justify-end h-full min-h-[400px]">
-            {/* Decorative Shapes */}
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] pointer-events-none">
-              <div className="absolute right-0 top-0 w-64 h-32 border-[12px] border-[#22c55e] rounded-full opacity-20 blur-sm rotate-12" />
-              <div className="absolute right-20 bottom-0 w-64 h-32 border-[12px] border-[#22c55e] rounded-full opacity-20 blur-sm -rotate-12" />
-            </div>
-
-            {/* Mascot */}
-            <Reveal
-              delay={800}
-              className="relative z-10 w-full flex justify-center lg:justify-end"
-            >
+          <div className="relative flex justify-center lg:justify-end">
+            <Reveal delay={800} className="relative z-20 w-full flex justify-center lg:justify-end">
               <div className="relative">
-                {/* Functional Badge */}
-                <div className="absolute top-12 right-12 z-20 bg-black/80 border border-[#22c55e]/30 px-4 py-2 rounded-xl text-sm text-white backdrop-blur-sm">
+                <div className="absolute top-12 right-12 z-30 bg-black/80 border border-[#22c55e]/30 px-4 py-2 rounded-xl text-sm text-white backdrop-blur-sm">
                   Conversação desde a 1ª aula
                 </div>
 
                 <img
-                  src="/arquivos/Melvin.svg"
+                  src="/arquivos/MelvinM.svg"
                   alt="Mascote Growen"
                   className="w-full max-w-[650px] object-contain drop-shadow-2xl"
                   style={{
-                    maskImage:
-                      'linear-gradient(to bottom, black 85%, transparent 100%)',
-                    WebkitMaskImage:
-                      'linear-gradient(to bottom, black 85%, transparent 100%)',
+                    maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
                   }}
                 />
               </div>
