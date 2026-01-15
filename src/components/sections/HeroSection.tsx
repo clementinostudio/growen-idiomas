@@ -71,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
         <img
           src="/arquivos/logoGrowen.svg"
           alt=""
-          className="w-[420px] opacity-70"
+          className="w-[415px] opacity-20"
           style={{
             transform: 'rotate(180deg)',
             maskImage: 'linear-gradient(315deg, black 60%, transparent 100%)',
@@ -87,7 +87,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
           {/* LEFT CONTENT */}
           <div className="relative flex flex-col items-start text-left">
             <div
-              className="hidden sm:block absolute -bottom-40 -left-8 w-[640px] h-[640px] bg-cover bg-center bg-no-repeat opacity-25 pointer-events-none z-0 rounded-md"
+              className="hidden sm:block absolute -bottom-40 -left-8 w-[640px] h-[640px] bg-cover bg-center bg-no-repeat opacity-30 pointer-events-none z-0 rounded-md"
               style={{ backgroundImage: "url('/arquivos/fundo.png')" }}
             />
 
