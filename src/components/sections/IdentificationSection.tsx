@@ -6,10 +6,11 @@ export const IdentificationSection: React.FC = () => {
   return (
     <section
       id="para-quem"
-      className="py-28 md:py-32 bg-white overflow-hidden"
+      className="py-20 sm:py-28 md:py-32 bg-white overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      {/* Container com padding lateral maior para mobile */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-y-0 gap-x-12 items-center">
 
           {/* LEFT: CONTENT */}
           <div>
@@ -29,10 +30,10 @@ export const IdentificationSection: React.FC = () => {
               />
             </Reveal>
 
-            <div className="mt-14 space-y-10">
+            <div className="mt-10 sm:mt-14 space-y-8 sm:space-y-10">
               {PAIN_POINTS.map((point, index) => (
                 <Reveal key={index} delay={200 + index * 100}>
-                  <div className="flex gap-6 group max-w-xl">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 group max-w-full sm:max-w-xl">
                     {/* Icon */}
                     <div className="shrink-0 pt-1">
                       <point.icon className="w-6 h-6 text-gray-400 group-hover:text-[#22c55e] transition-colors duration-200" />
@@ -54,10 +55,10 @@ export const IdentificationSection: React.FC = () => {
           </div>
 
           {/* RIGHT: IMAGE */}
-          <Reveal delay={300} className="relative w-full flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[620px]">
+          <Reveal delay={300} className="relative w-full flex justify-center lg:justify-end px-2 sm:px-0">
+            <div className="relative w-full max-w-[90vw] sm:max-w-[620px]">
               {/* Context Badge */}
-              <div className="absolute top-10 left-10 z-10 bg-white border border-gray-200 px-4 py-2 rounded-xl text-sm text-gray-700 shadow-sm">
+              <div className="absolute top-6 sm:top-10 left-2 sm:left-10 z-10 bg-white border border-gray-200 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-sm text-gray-700 shadow-sm">
                 Identificação real, sem enrolação
               </div>
 
