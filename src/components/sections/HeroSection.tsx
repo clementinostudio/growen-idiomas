@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon'; // só se precisar do ícone no Hero
 
 interface RevealProps {
   children: React.ReactNode;
@@ -44,29 +45,22 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-[#050505]">
-
+      
       {/* BACKGROUND OVERLAYS */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {/* Degradê lateral */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
-
         {/* Degradê inferior */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-
-        {/* PONTINHOS – MENORES, MAIS ESPAÇADOS E MAIS OPACOS */}
+        {/* Pontinhos */}
         <div className="absolute inset-0 opacity-[0.1] bg-[radial-gradient(circle_at_2px_2px,#fff_1px,transparent_0)] bg-[size:42px_42px]" />
       </div>
 
-      {/* LOGO DECORATIVA PARCIAL – INFERIOR ESQUERDO */}
+      {/* LOGO DECORATIVA PARCIAL */}
       <div className="absolute -bottom-28 -left-28 z-10 pointer-events-none select-none">
-        <img
-          src="/arquivos/logoGrowen.svg"
-          alt=""
-          className="w-[360px] opacity-30"
-        />
+        <img src="/arquivos/logoGrowen.svg" alt="" className="w-[360px] opacity-30" />
       </div>
 
-      {/* LOGO DECORATIVA PARCIAL – SUPERIOR DIREITO */}
       <div className="absolute -top-24 -right-28 z-10 pointer-events-none select-none hidden lg:block">
         <img
           src="/arquivos/logoGrowen.svg"
@@ -81,11 +75,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
       </div>
 
       {/* CONTAINER */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 md:py-24 relative z-30">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 w-full py-20 md:py-24 relative z-30">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
           {/* LEFT CONTENT */}
-          <div className="relative flex flex-col items-start text-left">
+          <div className="relative flex flex-col items-start text-left px-2 sm:px-0">
             <div
               className="hidden sm:block absolute -bottom-40 -left-8 w-[640px] h-[640px] bg-cover bg-center bg-no-repeat opacity-30 pointer-events-none z-0 rounded-md"
               style={{ backgroundImage: "url('/arquivos/fundo.png')" }}
@@ -115,7 +109,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
               </Reveal>
 
               <Reveal delay={400}>
-                <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed font-questrial">
+                <p className="text-gray-400 text-base md:text-lg max-w-full sm:max-w-lg leading-relaxed font-questrial">
                   Aulas focadas em conversação real, feitas para quem já estudou,
                   mas ainda não consegue falar inglês com confiança.
                 </p>
@@ -124,7 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
               <Reveal delay={600} className="pt-6">
                 <button
                   onClick={onCTAClick}
-                  className="group relative flex items-center gap-4 pl-8 pr-2 py-2 bg-[#22c55e] hover:bg-[#1eb053] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+                  className="group relative flex items-center gap-4 pl-6 pr-2 py-2 bg-[#22c55e] hover:bg-[#1eb053] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
                 >
                   <span className="font-satoshi font-bold text-lg tracking-wide">
                     Agendar aula teste gratuita
@@ -148,7 +142,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center lg:justify-end px-2 sm:px-0">
             <Reveal delay={800} className="relative z-20 w-full flex justify-center lg:justify-end">
               <div className="relative">
                 <div className="absolute top-12 right-12 z-30 bg-black/80 border border-[#22c55e]/30 px-4 py-2 rounded-xl text-sm text-white backdrop-blur-sm">
