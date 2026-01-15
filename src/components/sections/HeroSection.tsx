@@ -72,7 +72,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
       </div>
 
       {/* CONTAINER */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-6 md:px-12 lg:px-16 w-full pt-24 md:pt-28 lg:pt-32 py-20 md:py-24 relative z-30">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 md:px-12 lg:px-16 w-full pt-36 md:pt-28 lg:pt-32 py-20 md:py-24 relative z-30">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
           {/* LEFT CONTENT */}
@@ -142,7 +142,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
           <div className="relative flex justify-center lg:justify-end px-2 sm:px-0">
             <Reveal delay={800} className="relative z-20 w-full flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="absolute top-12 right-12 z-30 bg-black/80 border border-[#22c55e]/30 px-4 py-2 rounded-xl text-sm text-white backdrop-blur-sm">
+                <div className="hidden sm:block absolute top-12 right-12 z-30 bg-black/80 border border-[#22c55e]/30 px-4 py-2 rounded-xl text-sm text-white backdrop-blur-sm">
                   Conversação desde a 1ª aula
                 </div>
 
