@@ -6,21 +6,15 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer
-      id="contato"
-      className="bg-white pt-20 pb-10 border-t border-gray-100 transition-colors duration-500"
-    >
+    <footer className="bg-black text-gray-200 pt-16 pb-8 transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <img
-                src="/arquivos/logoGrowen.svg"
-                alt="Growen"
-                className="w-10 h-auto"
-              />
+        {/* Logo + Descrição + Contato */}
+        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-8 mb-12">
+          <div className="flex flex-col gap-4 max-w-sm">
+            <div className="flex items-center gap-3">
+              <img src="/arquivos/logoGrowen.svg" alt="Growen" className="w-10 h-auto" />
               <div>
-                <span className="block text-2xl font-satoshi font-black tracking-tighter text-gray-900">
+                <span className="block text-2xl font-bold text-gray-200">
                   Growen
                 </span>
                 <span className="block ml-1 text-[10px] tracking-[0.4em] text-gray-400 font-bold uppercase">
@@ -28,63 +22,31 @@ export const Footer: React.FC = () => {
                 </span>
               </div>
             </div>
-            <p className="text-gray-500 text-sm max-w-xs leading-relaxed">
-              Revolucionando o ensino de idiomas com foco em conversação real e
-              métodos adaptativos.
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Revolucionando o ensino de idiomas com foco em conversação real e métodos adaptativos.
             </p>
           </div>
 
-          <div>
-            <h4 className="font-bold text-gray-900 mb-4">Escola</h4>
-            <ul className="space-y-3 text-sm text-gray-500">
-              <li>
-                <a href="#para-quem" className="hover:text-[#22c55e]">
-                  Metodologia
-                </a>
-              </li>
-              <li>
-                <a href="#quem-somos" className="hover:text-[#22c55e]">
-                  Sobre Nós
-                </a>
-              </li>
-              <li>
-                <a href="#solucoes" className="hover:text-[#22c55e]">
-                  Preços
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-gray-900 mb-4">Contato</h4>
-            <ul className="space-y-3 text-sm text-gray-500">
-              <li className="flex items-center gap-2">
-                <MapPin size={16} /> R. Estéfano Zshoka
-              </li>
-              <li className="flex items-center gap-2">
-                <WhatsAppIcon className="w-4 h-4" /> (43) 99653-6535
-              </li>
-              <li className="flex items-center gap-2">hello@growen.com</li>
-            </ul>
+          <div className="flex flex-col space-y-2 text-sm text-gray-400">
+            <div className="flex items-center gap-2">
+              <MapPin size={16} /> R. Estéfano Zshoka
+            </div>
+            <div className="flex items-center gap-2">
+              <WhatsAppIcon className="w-4 h-4" /> (43) 99653-6535
+            </div>
+            <div>hello@growen.com</div>
           </div>
         </div>
 
-        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-xs">
-            © {currentYear} Growen Idiomas.
-          </p>
-          <div className="flex gap-6">
-            <a
-              href="#"
-              className="text-gray-400 hover:text-[#22c55e] transition-colors"
-            >
-              <Instagram size={20} />
+        {/* Bottom */}
+        <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+          <p>© {currentYear} Growen Idiomas.</p>
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-white transition-colors">
+              <Instagram size={18} />
             </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-[#22c55e] transition-colors"
-            >
-              <Facebook size={20} />
+            <a href="#" className="hover:text-white transition-colors">
+              <Facebook size={18} />
             </a>
           </div>
         </div>
