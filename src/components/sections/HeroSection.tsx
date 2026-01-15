@@ -164,4 +164,3 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
     </section>
   );
 };
-att
