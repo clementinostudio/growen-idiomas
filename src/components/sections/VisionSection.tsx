@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import { Globe, Briefcase, MessagesSquare, Smile } from 'lucide-react';
 import { Reveal } from '../ui';
 
@@ -33,7 +33,8 @@ export const VisionSection: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-green-900/25 via-black to-black opacity-60" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* CONTAINER COM MAIS ESPAÇO LATERAL NO MOBILE */}
+      <div className="relative z-10 max-w-7xl mx-auto px-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* TEXT CONTENT */}

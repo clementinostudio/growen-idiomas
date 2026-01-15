@@ -5,7 +5,8 @@ import { STEPS } from '../../constants';
 export const StepsSection: React.FC = () => {
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* CONTAINER COM MESMO ESPAÇO LATERAL MOBILE */}
+      <div className="max-w-5xl mx-auto px-12 sm:px-6 lg:px-8">
         <Reveal>
           <div className="flex items-center justify-center gap-4 mb-16">
             <h2 className="text-2xl font-bold text-center text-gray-900 font-satoshi">

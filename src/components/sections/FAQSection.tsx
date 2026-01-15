@@ -12,7 +12,8 @@ export const FAQSection: React.FC = () => {
 
   return (
     <section className="py-24 bg-[#050505]">
-      <div className="max-w-2xl mx-auto px-4">
+      {/* CONTAINER COM MESMO ESPAÇO LATERAL DO MOBILE */}
+      <div className="max-w-2xl mx-auto px-12 sm:px-6 lg:px-8">
         <Reveal>
           <h2 className="text-3xl font-bold mb-12 text-left text-white font-satoshi">
             Dúvidas Frequentes

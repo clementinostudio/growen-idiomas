@@ -118,7 +118,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ item, onClose }) => {
       role="dialog"
       aria-modal="true"
       aria-label={item.label}
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center px-4"
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center px-10 sm:px-12 md:px-12 lg:px-16"
       onClick={onClose}
     >
       <div
@@ -134,7 +134,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ item, onClose }) => {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Image Wrapper (FIX DEFINITIVO) */}
+        {/* Image Wrapper */}
         <div className="mx-auto bg-black rounded-2xl overflow-hidden max-h-[80vh] max-w-full flex items-center justify-center">
           <img
             src={item.src}
@@ -167,7 +167,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
       id="quem-somos"
       className="py-24 md:py-32 bg-white relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Container com mesmo espaçamento lateral do Methodology e Identification */}
+      <div className="max-w-7xl mx-auto px-10 sm:px-12 md:px-12 lg:px-16 relative z-10">
         {/* =====================
             Top Content
         ===================== */}
