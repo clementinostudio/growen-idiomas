@@ -79,6 +79,15 @@
       ]
     }
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-77ELXGYCSY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-77ELXGYCSY');
+    </script>
   <script type="importmap">
 {
   "imports": {
@@ -94,23 +103,9 @@
   <body>
     <div id="root"></div>
     <script>
-      // Lazy load scripts
+      // Lazy load scripts if needed
       window.addEventListener('load', function() {
-        // Load Google Analytics
-        const gaScript = document.createElement('script');
-        gaScript.async = true;
-        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-77ELXGYCSY';
-        gaScript.onload = function() {
-          const gaConfig = document.createElement('script');
-          gaConfig.textContent = `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-77ELXGYCSY');
-          `;
-          document.head.appendChild(gaConfig);
-        };
-        document.head.appendChild(gaScript);
+        // No scripts to lazy load currently
       });
     </script>
   <script type="module" src="/index.tsx"></script>
