@@ -20,17 +20,17 @@ interface GalleryItem {
 ===================== */
 const GALLERY: GalleryItem[] = [
   {
-    src: '/arquivos/sala.jpg',
+    src: '/arquivos/sala.webp',
     label: 'Sala de Aula',
     aspect: 'aspect-[16/10]',
   },
   {
-    src: '/arquivos/recep.jpg',
+    src: '/arquivos/recep.webp',
     label: 'Recepção',
     aspect: 'aspect-[4/3]',
   },
   {
-    src: '/arquivos/fora.jpg',
+    src: '/arquivos/exter.webp',
     label: 'Growen Exterior',
     aspect: 'aspect-[4/3]',
   },

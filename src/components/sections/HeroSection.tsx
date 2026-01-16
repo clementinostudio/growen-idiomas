@@ -80,7 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
           <div className="relative flex flex-col items-start text-left px-2 sm:px-0">
             <div
               className="hidden sm:block absolute -bottom-40 -left-8 w-[640px] h-[640px] bg-cover bg-center bg-no-repeat opacity-30 pointer-events-none z-0 rounded-md"
-              style={{ backgroundImage: "url('/arquivos/fundo.png')" }}
+              style={{ backgroundImage: "url('/arquivos/fundo.webp')" }}
             />
 
             <div className="relative z-10 space-y-6">
