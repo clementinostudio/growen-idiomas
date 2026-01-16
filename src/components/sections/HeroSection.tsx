@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
       {/* LOGOS DECORATIVAS */}
       <div className="absolute -bottom-28 -left-28 z-10 pointer-events-none select-none">
-        <img src="/arquivos/logoGrowen.svg" alt="" className="w-[360px] opacity-30" />
+        <img src="/arquivos/logoGrowen.svg" alt="" className="w-[360px] opacity-30" loading="lazy" />
       </div>
 
       <div className="absolute -top-24 -right-28 z-10 pointer-events-none select-none hidden lg:block">
@@ -63,6 +63,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
           src="/arquivos/logoGrowen.svg"
           alt=""
           className="w-[415px] opacity-20"
+          loading="lazy"
           style={{
             transform: 'rotate(180deg)',
             maskImage: 'linear-gradient(315deg, black 60%, transparent 100%)',
@@ -150,6 +151,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                   src="/arquivos/MelvinM.svg"
                   alt="Mascote Growen"
                   className="w-full max-w-[650px] object-contain drop-shadow-2xl"
+                  loading="lazy"
                   style={{
                     maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
                     WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
