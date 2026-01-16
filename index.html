@@ -99,14 +99,14 @@
         // Load Google Analytics
         const gaScript = document.createElement('script');
         gaScript.async = true;
-        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID';
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-77ELXGYCSY';
         gaScript.onload = function() {
           const gaConfig = document.createElement('script');
           gaConfig.textContent = `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID');
+            gtag('config', 'G-77ELXGYCSY');
           `;
           document.head.appendChild(gaConfig);
         };
