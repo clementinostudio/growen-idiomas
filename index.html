@@ -23,6 +23,11 @@
     <meta property="twitter:title" content="Growen Idiomas | Curso de Inglês Focado em Conversação" />
     <meta property="twitter:description" content="Metodologia ativa para perder o medo de falar. Aulas ao vivo e personalizadas." />
 
+    <!-- Questrial from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts will be loaded lazily -->
+    <link rel="stylesheet" href="/index.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -35,12 +40,6 @@
         }
       }
     </script>
-    <!-- Questrial from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-    <!-- Satoshi from Fontshare -->
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
     <style>
       html {
         scroll-behavior: smooth;
@@ -77,14 +76,6 @@
       ]
     }
     </script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
   <script type="importmap">
 {
   "imports": {
@@ -99,6 +90,38 @@
 </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Lazy load fonts and scripts
+      window.addEventListener('load', function() {
+        // Load Questrial font
+        const questrialLink = document.createElement('link');
+        questrialLink.href = 'https://fonts.googleapis.com/css2?family=Questrial&display=swap';
+        questrialLink.rel = 'stylesheet';
+        document.head.appendChild(questrialLink);
+
+        // Load Satoshi font
+        const satoshiLink = document.createElement('link');
+        satoshiLink.href = 'https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap';
+        satoshiLink.rel = 'stylesheet';
+        document.head.appendChild(satoshiLink);
+
+        // Load Google Analytics
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID';
+        gaScript.onload = function() {
+          const gaConfig = document.createElement('script');
+          gaConfig.textContent = `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID');
+          `;
+          document.head.appendChild(gaConfig);
+        };
+        document.head.appendChild(gaScript);
+      });
+    </script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>

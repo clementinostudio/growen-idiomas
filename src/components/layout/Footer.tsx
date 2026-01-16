@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
           {/* Logo + Descrição */}
           <div className="flex flex-col gap-6 max-w-sm">
             <div className="flex items-center gap-3">
-              <img src="/arquivos/logoGrowen.svg" alt="Growen" className="w-10 h-auto" />
+              <img src="/arquivos/logoGrowen.svg" alt="Growen" className="w-10 h-auto" width="40" height="40" />
               <div>
                 <span className="block text-2xl font-bold text-gray-200">
                   Growen

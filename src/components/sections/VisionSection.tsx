@@ -105,6 +105,8 @@ export const VisionSection: React.FC = () => {
                 src="/arquivos/preguizioportal.svg"
                 alt="Mascote Growen"
                 className="relative w-full max-w-[480px] object-contain"
+                width="480"
+                height="600"
               />
             </div>
           </Reveal>

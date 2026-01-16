@@ -212,6 +212,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
                 alt="Mascote Growen"
                 onClick={onExploreClick}
                 className="w-full max-h-[420px] object-contain cursor-pointer hover:scale-[1.02] transition-transform"
+                width="600"
+                height="420"
               />
             </Reveal>
 
