@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
       {/* LOGOS DECORATIVAS */}
       <div className="absolute -bottom-28 -left-28 z-10 pointer-events-none select-none">
-        <img src="/arquivos/logoGrowen.svg" alt="" className="w-[360px] opacity-30" loading="lazy" width="360" height="100" />
+        <img src="/arquivos/logoGrowen.svg" alt="" className="w-[360px] opacity-30" width="360" height="100" fetchpriority="high" />
       </div>
 
       <div className="absolute -top-24 -right-28 z-10 pointer-events-none select-none hidden lg:block">
