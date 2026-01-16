@@ -117,7 +117,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
               <Reveal delay={600} className="pt-6">
                 <button
-                  onClick={onCTAClick}
+                  onClick={() => window.open('https://wa.me/43996536535?text=quero%20minha%20aula%20teste', '_blank')}
                   className="group relative flex items-center gap-4 pl-6 pr-2 py-2 bg-[#22c55e] hover:bg-[#1eb053] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
                 >
                   <span className="font-satoshi font-bold text-lg tracking-wide">
