@@ -1,113 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/arquivos/favicon.svg" />
-    
-    <!-- SEO Primary Meta Tags -->
-    <title>Growen Idiomas | Curso de Inglês Online Focado em Conversação</title>
-    <meta name="description" content="Pare de estudar e comece a falar. Curso de inglês online com metodologia ativa focada em conversação real e fluência rápida. Agende sua aula teste gratuita." />
-    <meta name="keywords" content="curso de inglês, inglês online, aulas de conversação, escola de idiomas, aprender inglês, fluência, inglês para trabalho" />
-    <meta name="author" content="Growen Idiomas" />
+<head>
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://growenidiomas.com.br/" />
-    <meta property="og:title" content="Growen Idiomas | Curso de Inglês Focado em Conversação" />
-    <meta property="og:description" content="Metodologia ativa para perder o medo de falar. Aulas ao vivo e personalizadas. Agende sua aula teste hoje." />
-    <meta property="og:image" content="https://growenidiomas.com.br/og-image.jpg" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/arquivos/favicon.svg" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Growen Idiomas | Curso de Inglês Focado em Conversação" />
-    <meta property="twitter:description" content="Metodologia ativa para perder o medo de falar. Aulas ao vivo e personalizadas." />
+  <!-- Primary SEO -->
+  <title>Curso de Inglês Online Focado em Conversação | Growen Idiomas</title>
+  <meta
+    name="description"
+    content="Curso de inglês online focado em conversação real. Metodologia ativa para destravar sua fala, ganhar fluência e falar inglês com confiança. Aula teste gratuita."
+  />
+  <meta name="author" content="Growen Idiomas" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://growenidiomas.com.br/" />
 
-    <!-- Questrial from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-    <!-- Satoshi from Fontshare -->
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/index.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Questrial', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: 'Questrial', sans-serif;
-        background-color: #ffffff;
-        color: #111827;
-      }
-      .font-satoshi {
-        font-family: 'Satoshi', sans-serif;
-      }
-      .font-questrial {
-        font-family: 'Questrial', sans-serif;
-      }
-      /* Custom Dot Pattern */
-      .bg-dot-pattern {
-        background-image: radial-gradient(currentColor 1px, transparent 1px);
-        background-size: 32px 32px;
-      }
-    </style>
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Growen Idiomas",
-      "description": "Curso de inglês online com metodologia ativa focada em conversação real e fluência rápida.",
-      "url": "https://growenidiomas.com.br",
-      "logo": "https://growenidiomas.com.br/arquivos/logoGrowen.svg",
-      "sameAs": [
-        "https://www.instagram.com/growenidiomas",
-        "https://wa.me/5511999999999"
-      ]
-    }
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-77ELXGYCSY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://growenidiomas.com.br/" />
+  <meta property="og:title" content="Curso de Inglês Online Focado em Conversação | Growen Idiomas" />
+  <meta
+    property="og:description"
+    content="Pare de estudar inglês sem resultado. Aprenda a falar com aulas práticas, ao vivo e personalizadas. Agende sua aula teste."
+  />
+  <meta property="og:image" content="https://growenidiomas.com.br/og-image.jpg" />
+  <meta property="og:site_name" content="Growen Idiomas" />
 
-      gtag('config', 'G-77ELXGYCSY');
-    </script>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Curso de Inglês Online Focado em Conversação | Growen Idiomas" />
+  <meta
+    name="twitter:description"
+    content="Metodologia ativa para aprender inglês de verdade e falar com confiança."
+  />
+  <meta name="twitter:image" content="https://growenidiomas.com.br/og-image.jpg" />
+
+  <!-- Preconnect Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/index.css" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script defer>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Questrial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Global Styles -->
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Questrial', sans-serif; background-color: #ffffff; color: #111827; }
+    .font-satoshi { font-family: 'Satoshi', sans-serif; }
+    .bg-dot-pattern { background-image: radial-gradient(currentColor 1px, transparent 1px); background-size: 32px 32px; }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Growen Idiomas",
+    "url": "https://growenidiomas.com.br",
+    "logo": "https://growenidiomas.com.br/arquivos/logoGrowen.svg",
+    "description": "Curso de inglês online com metodologia ativa focada em conversação real.",
+    "sameAs": [
+      "https://www.instagram.com/growenidiomas",
+      "https://wa.me/5511999999999"
+    ]
   }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-77ELXGYCSY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-77ELXGYCSY', { anonymize_ip: true });
+  </script>
+
+  <!-- Import Map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@19.2.3",
+      "react-dom": "https://esm.sh/react-dom@19.2.3",
+      "lucide-react": "https://esm.sh/lucide-react@0.562.0"
+    }
+  }
+  </script>
+
+  <!-- Animated Title (suave e contínuo) -->
+  <script>
+    const pageTitle = "Curso de Inglês Online Focado em Conversação | Growen Idiomas ";
+    let idx = 0;
+
+    function animateTitle() {
+      // Texto "rodando" suavemente
+      document.title = pageTitle.substring(idx) + pageTitle.substring(0, idx);
+      idx = (idx + 1) % pageTitle.length;
+    }
+
+    setInterval(animateTitle, 200); // Ajuste velocidade: 200ms = suave e contínuo
+  </script>
 </head>
-  <body>
-    <div id="root"></div>
-    <script>
-      // Lazy load scripts if needed
-      window.addEventListener('load', function() {
-        // No scripts to lazy load currently
-      });
-    </script>
+
+<body>
+  <noscript>
+    <strong>Este site requer JavaScript para funcionar corretamente.</strong>
+  </noscript>
+
+  <div id="root"></div>
+
+  <!-- App -->
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
