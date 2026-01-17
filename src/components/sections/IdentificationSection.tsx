@@ -57,10 +57,6 @@ export const IdentificationSection: React.FC = () => {
           {/* RIGHT: IMAGE */}
           <Reveal delay={300} className="relative w-full flex justify-center lg:justify-end px-6 sm:px-4">
             <div className="relative w-full max-w-[90vw] sm:max-w-[620px]">
-              {/* Context Badge */}
-              <div className="absolute top-6 sm:top-10 left-4 sm:left-10 z-10 bg-white border border-gray-200 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-sm text-gray-700 shadow-sm">
-                Identificação real, sem enrolação
-              </div>
 
               <img
                 src="/arquivos/MelvinPunho.svg"

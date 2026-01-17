@@ -96,11 +96,6 @@ export const VisionSection: React.FC = () => {
               {/* Glow */}
               <div className="absolute inset-0 bg-green-500/10 rounded-[3rem] blur-3xl" />
 
-              {/* Badge */}
-              <div className="absolute top-6 right-6 z-20 bg-black/80 border border-green-500/30 px-4 py-2 rounded-xl text-sm text-white backdrop-blur-sm">
-                Inglês para a vida real
-              </div>
-
               <img
                 src="/arquivos/preguizioportal.svg"
                 alt="Mascote Growen"
