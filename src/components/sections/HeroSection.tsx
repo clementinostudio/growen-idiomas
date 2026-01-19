@@ -141,8 +141,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
               <Reveal delay={400}>
                 <p className="text-gray-400 text-base md:text-lg max-w-full sm:max-w-lg leading-relaxed font-questrial">
-                  Aulas focadas em conversação real, feitas para quem já
-                  estudou, mas ainda não consegue falar inglês com confiança.
+                  Aulas de conversação real, para quem quer falar inglês com confiança, mesmo começando do zero.
                 </p>
               </Reveal>
 
