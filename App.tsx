@@ -149,7 +149,7 @@ const App: React.FC = () => {
             <div className="hidden md:flex items-center gap-8">
               <a href="#para-quem" onClick={(e) => handleNavClick(e, 'para-quem')} className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}>Para quem</a>
               <a href="#quem-somos" onClick={(e) => handleNavClick(e, 'quem-somos')} className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}>Quem somos</a>
-              <a href="#depoimentos" onClick={(e) => handleNavClick(e, 'depoimentos')} className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}>Soluções</a>
+              <a href="#solucoes" onClick={(e) => handleNavClick(e, 'solucoes')} className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}>Soluções</a>
               <a href="#contato" onClick={(e) => handleNavClick(e, 'contato')} className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}>Contato</a>
             </div>
 
@@ -184,7 +184,7 @@ const App: React.FC = () => {
           `}>
              <a href="#para-quem" onClick={(e) => handleNavClick(e, 'para-quem')} className="text-2xl font-bold text-gray-300 hover:text-green-500 transition-colors">Para quem</a>
              <a href="#quem-somos" onClick={(e) => handleNavClick(e, 'quem-somos')} className="text-2xl font-bold text-gray-300 hover:text-green-500 transition-colors">Quem somos</a>
-             <a href="#depoimentos" onClick={(e) => handleNavClick(e, 'depoimentos')} className="text-2xl font-bold text-gray-300 hover:text-green-500 transition-colors">Soluções</a>
+             <a href="#solucoes" onClick={(e) => handleNavClick(e, 'solucoes')} className="text-2xl font-bold text-gray-300 hover:text-green-500 transition-colors">Soluções</a>
              <a href="#contato" onClick={(e) => handleNavClick(e, 'contato')} className="text-2xl font-bold text-gray-300 hover:text-green-500 transition-colors">Contato</a>
              
              <div className="flex gap-8 mt-8 pt-8 border-t border-white/10 w-full justify-center">

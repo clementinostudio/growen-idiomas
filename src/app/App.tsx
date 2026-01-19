@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import { useLockBodyScroll, useScrollPosition, useSmoothScroll } from './hooks';
-import { Navbar, MobileMenu, Footer, FloatingWhatsApp } from './components/layout';
+import { useLockBodyScroll, useScrollPosition, useSmoothScroll } from '../hooks';
+import {
+  Navbar,
+  MobileMenu,
+  Footer,
+  FloatingWhatsApp,
+} from '../features/landing/layout';
 import {
   HeroSection,
   IdentificationSection,
@@ -11,7 +16,7 @@ import {
   TestimonialsSection,
   FAQSection,
   CTASection,
-} from './components/sections';
+} from '../features/landing/sections';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

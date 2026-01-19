@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reveal } from '../ui';
-import { STEPS } from '../../constants';
+import { STEPS } from '../../../constants';
 
 export const StepsSection: React.FC = () => {
   return (

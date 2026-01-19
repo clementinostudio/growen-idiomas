@@ -2,37 +2,42 @@
 
 ## Resumo da Refatoração
 
-A landing page foi refatorada de um único arquivo `App.tsx` (713 linhas) para uma arquitetura profissional, modular e escalável, mantendo 100% do comportamento visual, HTML, Tailwind classes e funcionalidades.
+A landing page foi reorganizada para uma arquitetura feature-first, separando a composição principal em `src/app/App.tsx` e agrupando todo o domínio da landing em `src/features/landing`. O comportamento visual, HTML, classes Tailwind e funcionalidades foram preservados integralmente durante a migração.
 
 ## Estrutura de Pastas Criada
 
 ```
 /src
- ├── components
- │   ├── layout
- │   │   ├── Navbar.tsx              # Navegação fixa com menu responsivo
- │   │   ├── MobileMenu.tsx          # Menu mobile com animações
- │   │   ├── Footer.tsx              # Rodapé com links e contato
- │   │   └── FloatingWhatsApp.tsx    # Botão flutuante de WhatsApp
- │   │
- │   ├── sections
- │   │   ├── HeroSection.tsx         # Seção hero com mascote
- │   │   ├── IdentificationSection.tsx    # "Para quem é a Growen"
- │   │   ├── MethodologySection.tsx       # Metodologia e pilares
- │   │   ├── AboutSection.tsx            # "Quem somos" com galeria
- │   │   ├── VisionSection.tsx           # "Onde a Growen quer te levar"
- │   │   ├── StepsSection.tsx            # Timeline da jornada
- │   │   ├── TestimonialsSection.tsx     # Depoimentos de alunos
- │   │   ├── FAQSection.tsx              # Perguntas frequentes
- │   │   └── CTASection.tsx              # Call-to-action final
- │   │
- │   └── ui
- │       ├── Reveal.tsx              # Wrapper de animações
- │       ├── ImagePlaceholder.tsx    # Placeholder para imagens
- │       ├── MascotSpot.tsx          # Componente do mascote
- │       ├── WhatsAppIcon.tsx        # Ícone SVG do WhatsApp
- │       ├── SectionTitle.tsx        # Títulos reutilizáveis
- │       └── ButtonPrimary.tsx       # Botão padrão com ícone
+ ├── app
+ │   ├── App.tsx                     # Composição principal e orquestração de hooks
+ │   └── index.ts                    # Reexporta o App para o entrypoint
+ │
+ ├── features
+ │   └── landing
+ │       ├── layout
+ │       │   ├── Navbar.tsx          # Navegação fixa com menu responsivo
+ │       │   ├── MobileMenu.tsx      # Menu mobile com animações
+ │       │   ├── Footer.tsx          # Rodapé com links e contato
+ │       │   └── FloatingWhatsApp.tsx # Botão flutuante de WhatsApp
+ │       │
+ │       ├── sections
+ │       │   ├── HeroSection.tsx     # Seção hero com mascote
+ │       │   ├── IdentificationSection.tsx    # "Para quem é a Growen"
+ │       │   ├── MethodologySection.tsx       # Metodologia e pilares
+ │       │   ├── AboutSection.tsx             # "Quem somos" com galeria
+ │       │   ├── VisionSection.tsx            # "Onde a Growen quer te levar"
+ │       │   ├── StepsSection.tsx             # Timeline da jornada
+ │       │   ├── TestimonialsSection.tsx      # Depoimentos de alunos
+ │       │   ├── FAQSection.tsx               # Perguntas frequentes
+ │       │   └── CTASection.tsx               # Call-to-action final
+ │       │
+ │       └── ui
+ │           ├── Reveal.tsx          # Wrapper de animações
+ │           ├── ImagePlaceholder.tsx # Placeholder para imagens
+ │           ├── MascotSpot.tsx      # Componente do mascote
+ │           ├── WhatsAppIcon.tsx    # Ícone SVG do WhatsApp
+ │           ├── SectionTitle.tsx    # Títulos reutilizáveis
+ │           └── ButtonPrimary.tsx   # Botão padrão com ícone
  │
  ├── hooks
  │   ├── useScrollPosition.ts        # Hook: detecta scroll
@@ -42,10 +47,8 @@ A landing page foi refatorada de um único arquivo `App.tsx` (713 linhas) para u
  ├── constants
  │   └── index.ts                    # Dados das seções (FEATURES, TESTIMONIALS, etc)
  │
- ├── types
- │   └── index.ts                    # Tipos TypeScript (Feature, Testimonial, etc)
- │
- └── App.tsx                         # Componente raiz - apenas composição
+ └── types
+   └── index.ts                    # Tipos TypeScript (Feature, Testimonial, etc)
 ```
 
 ## Melhorias Implementadas
@@ -148,13 +151,13 @@ npm run build
 ```
 
 ### Adicionar Nova Seção
-1. Criar componente em `/src/components/sections/NovaSection.tsx`
-2. Importar em `/src/App.tsx`
+1. Criar componente em `/src/features/landing/sections/NovaSection.tsx`
+2. Importar em `/src/app/App.tsx`
 3. Adicionar ao JSX do App
 
 Exemplo:
 ```tsx
-// src/components/sections/NovaSection.tsx
+// src/features/landing/sections/NovaSection.tsx
 import React from 'react';
 import { Reveal } from '../ui';
 
@@ -194,6 +197,14 @@ Análise de performance indicou que não são necessários para esta aplicação
 - Componentes simples e rápidos
 - Sem re-renders desnecessários
 - Bundle size menor
+
+## Próximos Passos de Organização
+
+1. **Dividir HeroSection (213 linhas)**: extrair componentes para o cabeçalho (badge + títulos), bloco de copy e bloco de CTA, mantendo o wrapper Reveal; mover a lógica de IntersectionObserver para um hook reutilizável dentro de `ui/Reveal` para evitar duplicidade.
+2. **Modularizar AboutSection (288 linhas)**: separar a área textual, a galeria e o bloco de métricas em subcomponentes dentro de `sections/about`, reutilizando dados centralizados em `constants` onde possível.
+3. **Padronizar Reveal**: consolidar o Reveal avançado atualmente definido dentro de HeroSection para a pasta `ui`, expondo variantes via props (por exemplo, `mode="intersection"`), garantindo zero alteração visual.
+4. **Criar barrel exports específicos**: introduzir índices dedicados (`sections/hero/index.ts`, `layout/navbar/index.ts`) apenas quando os subcomponentes forem extraídos, para manter imports curtos e estáveis.
+5. **Documentar contratos internos**: registrar no `DEVELOPMENT_GUIDE.md` como subcomponentes devem expor props (ex.: `onCTAClick`, `metrics`), reforçando que qualquer refino visual precisa de aprovação antes da execução.
 
 ## Conclusão
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { ArrowRight, ArrowUpRight, X } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ArrowLeft, X } from 'lucide-react';
 import { Reveal } from '../ui';
 
 /* =====================
@@ -42,19 +42,20 @@ const GALLERY: GalleryItem[] = [
 interface GalleryCardProps {
   item: GalleryItem;
   delay: number;
-  onOpen: (item: GalleryItem) => void;
+  onOpen: (index: number) => void;
+  index: number;
 }
 
-const GalleryCard: React.FC<GalleryCardProps> = ({ item, delay, onOpen }) => {
+const GalleryCard: React.FC<GalleryCardProps> = ({ item, delay, onOpen, index }) => {
   return (
     <Reveal delay={delay}>
       <div
         role="button"
         tabIndex={0}
         aria-label={`Abrir imagem: ${item.label}`}
-        onClick={() => onOpen(item)}
-        onKeyDown={(e) => e.key === 'Enter' && onOpen(item)}
-        className={`relative group rounded-3xl overflow-hidden shadow-sm cursor-pointer transition-transform duration-500 hover:scale-[1.01] hover:shadow-lg ${item.aspect}`}
+        onClick={() => onOpen(index)}
+        onKeyDown={(e) => e.key === 'Enter' && onOpen(index)}
+        className={`relative group rounded-3xl overflow-hidden shadow-sm cursor-pointer ${item.aspect} focus:outline-none focus:ring-4 focus:ring-[#22c55e]/30 transform-gpu transition-transform duration-500 will-change-transform hover:scale-105 hover:-translate-y-1 hover:shadow-2xl focus:scale-105`}
       >
         {/* Image */}
         <img
@@ -62,20 +63,20 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ item, delay, onOpen }) => {
           alt={item.label}
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 transform-gpu group-hover:scale-110"
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
+        {/* Gradient overlay (animated) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
         {/* Hint */}
-        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full text-black opacity-100 group-hover:opacity-0 transition">
+        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full text-black opacity-100 group-hover:opacity-0 transition-all duration-400 transform-gpu group-hover:-translate-y-1">
           <span className="hidden sm:inline">Clique para ampliar</span>
           <span className="sm:hidden">Toque para ampliar</span>
         </div>
 
         {/* Expand icon */}
-        <div className="absolute top-4 right-4 bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+        <div className="absolute top-4 right-4 bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-transform duration-300 transform-gpu group-hover:scale-110">
           <ArrowUpRight className="w-4 h-4" />
         </div>
 
@@ -98,55 +99,84 @@ interface ImageModalProps {
   onClose: () => void;
 }
 
-const ImageModal: React.FC<ImageModalProps> = ({ item, onClose }) => {
+interface ModalProps {
+  index: number;
+  items: GalleryItem[];
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+}
+
+const ImageModal: React.FC<ModalProps> = ({ index, items, onClose, onPrev, onNext }) => {
   useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
+    const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft') onPrev();
+      if (e.key === 'ArrowRight') onNext();
     };
 
     document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', handleEsc);
+    document.addEventListener('keydown', handleKey);
 
     return () => {
       document.body.style.overflow = '';
-      document.removeEventListener('keydown', handleEsc);
+      document.removeEventListener('keydown', handleKey);
     };
-  }, [onClose]);
+  }, [onClose, onPrev, onNext]);
+
+  // Preload neighbors for smooth navigation
+  useEffect(() => {
+    const next = (index + 1) % items.length;
+    const prev = (index - 1 + items.length) % items.length;
+    const i1 = new Image();
+    const i2 = new Image();
+    i1.src = items[next].src;
+    i2.src = items[prev].src;
+  }, [index, items]);
+
+  const item = items[index];
 
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-label={item.label}
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center px-10 sm:px-12 md:px-12 lg:px-16"
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center px-6 sm:px-12 lg:px-16"
       onClick={onClose}
     >
-      <div
-        className="relative w-full max-w-6xl max-h-[90vh]"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Close */}
-        <button
-          aria-label="Fechar imagem"
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-black/60 text-white rounded-full p-2 hover:bg-black/80 transition"
-        >
+      <div className="relative w-full max-w-6xl max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+        <button aria-label="Fechar imagem" onClick={onClose} className="absolute top-4 right-4 z-20 bg-black/60 text-white rounded-full p-2 hover:bg-black/80 transition">
           <X className="w-5 h-5" />
         </button>
 
-        {/* Image Wrapper */}
+        <button aria-label="Imagem anterior" onClick={(e) => { e.stopPropagation(); onPrev(); }} className="absolute left-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition">
+          <ArrowLeft className="w-5 h-5" />
+        </button>
+
+        <button aria-label="Próxima imagem" onClick={(e) => { e.stopPropagation(); onNext(); }} className="absolute right-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition">
+          <ArrowRight className="w-5 h-5" />
+        </button>
+
         <div className="mx-auto bg-black rounded-2xl overflow-hidden max-h-[80vh] max-w-full flex items-center justify-center">
-          <img
-            src={item.src}
-            alt={item.label}
-            className="w-auto h-auto max-h-[80vh] max-w-full object-contain"
-          />
+          <img src={item.src} alt={item.label} className="w-auto h-auto max-h-[80vh] max-w-full object-contain transition-transform duration-300" />
         </div>
 
-        {/* Caption */}
-        <p className="mt-4 text-center text-white text-xs uppercase tracking-widest">
-          {item.label}
-        </p>
+        <p className="mt-4 text-center text-white text-xs uppercase tracking-widest">{item.label}</p>
+
+        {/* Thumbnails */}
+        <div className="mt-4 flex items-center justify-center gap-3 overflow-x-auto py-2">
+          {items.map((it, i) => (
+            <button
+              key={it.src}
+              onClick={(e) => { e.stopPropagation(); /* focus this image */ }}
+              aria-label={`Ver ${it.label}`}
+              className={`rounded-lg overflow-hidden border-2 ${i === index ? 'border-[#22c55e]' : 'border-transparent'} shrink-0 w-20 h-12`}
+              onMouseDown={(e) => e.stopPropagation()}
+            >
+              <img src={it.src} alt={it.label} className="w-full h-full object-cover" />
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -156,11 +186,16 @@ const ImageModal: React.FC<ImageModalProps> = ({ item, onClose }) => {
    About Section
 ===================== */
 export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) => {
-  const [activeImage, setActiveImage] = useState<GalleryItem | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const openImage = useCallback((item: GalleryItem) => {
-    setActiveImage(item);
+  const openImage = useCallback((index: number) => {
+    setActiveIndex(index);
   }, []);
+
+  const closeModal = () => setActiveIndex(null);
+
+  const goPrev = () => setActiveIndex((i) => (i === null ? null : (i - 1 + GALLERY.length) % GALLERY.length));
+  const goNext = () => setActiveIndex((i) => (i === null ? null : (i + 1) % GALLERY.length));
 
   return (
     <section
@@ -234,19 +269,19 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
         ===================== */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           <div className="md:col-span-8">
-            <GalleryCard item={GALLERY[0]} delay={200} onOpen={openImage} />
+            <GalleryCard item={GALLERY[0]} delay={200} onOpen={openImage} index={0} />
           </div>
 
           <div className="md:col-span-4 grid grid-rows-2 gap-6">
-            <GalleryCard item={GALLERY[1]} delay={300} onOpen={openImage} />
-            <GalleryCard item={GALLERY[2]} delay={400} onOpen={openImage} />
+            <GalleryCard item={GALLERY[1]} delay={300} onOpen={openImage} index={1} />
+            <GalleryCard item={GALLERY[2]} delay={400} onOpen={openImage} index={2} />
           </div>
         </div>
       </div>
 
-      {/* Modal */}
-      {activeImage && (
-        <ImageModal item={activeImage} onClose={() => setActiveImage(null)} />
+      {/* Modal navegável */}
+      {activeIndex !== null && (
+        <ImageModal index={activeIndex} items={GALLERY} onClose={closeModal} onPrev={goPrev} onNext={goNext} />
       )}
     </section>
   );

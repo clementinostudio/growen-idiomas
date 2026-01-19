@@ -4,7 +4,7 @@
 
 ```
 ┌─────────────────────────────────────────────┐
-│            App (src/App.tsx)                │
+│       App (src/app/App.tsx)                 │
 │  - State: menu, scrolled                    │
 │  - Hooks: useScrollPosition, useLockBody... │
 │  - Funções: handleNav, handleCTA...         │
@@ -43,6 +43,23 @@
               │          │      │(Layout)  │
               └──────────┘      └──────────┘
 ```
+
+      ## Estrutura Atual de Pastas
+
+      ```
+      src/
+      ├── app/
+      │   ├── App.tsx
+      │   └── index.ts
+      ├── features/
+      │   └── landing/
+      │       ├── layout/
+      │       ├── sections/
+      │       └── ui/
+      ├── hooks/
+      ├── constants/
+      └── types/
+      ```
 
 ## Fluxo de Dados
 
@@ -88,14 +105,14 @@ useScrollPosition
 ├─ Purpose: Detectar quando usuário scrollou
 ├─ State: scrolled (boolean)
 ├─ Return: boolean
-└─ Uso: App.tsx, Navbar.tsx
+└─ Uso: app/App.tsx, Navbar.tsx
 
 useLockBodyScroll
 │
 ├─ Purpose: Bloquear scroll do body quando menu aberto
 ├─ Input: isLocked (boolean)
 ├─ Side Effect: document.body.style.overflow
-└─ Uso: App.tsx
+└─ Uso: app/App.tsx
 
 useSmoothScroll
 │
@@ -104,7 +121,7 @@ useSmoothScroll
 ├─ Methods:
 │  ├─ scrollToElement(id: string)
 │  └─ scrollToTop()
-└─ Uso: App.tsx, Navbar.tsx, Buttons
+└─ Uso: app/App.tsx, Navbar.tsx, Buttons
 ```
 
 ## Estrutura de Componentes por Camada
@@ -143,7 +160,7 @@ useSmoothScroll
 ## Padrão de Renderização
 
 ```
-App.tsx
+app/App.tsx
   │
   ├─ render(Navbar + MobileMenu)      [Layout]
   │   ├─ render(Logo + Links)         [UI: WhatsAppIcon]
@@ -186,7 +203,7 @@ App.tsx
 
 ```
 1. Clique no Menu Mobile
-   ├─ App.tsx: setIsMenuOpen(true)
+   ├─ app/App.tsx: setIsMenuOpen(true)
    ├─ Navbar: recebe isMenuOpen=true
    ├─ MobileMenu: recebe isOpen=true, renderiza
    ├─ useLockBodyScroll: bloqueia scroll
@@ -194,15 +211,15 @@ App.tsx
 
 2. Clique em Link de Navegação
    ├─ MobileMenu: onClick → onNavClick
-   ├─ App.tsx: handleNavClick(id)
+   ├─ app/App.tsx: handleNavClick(id)
    ├─ useSmoothScroll.scrollToElement(id)
    ├─ Browser: scroll suave até elemento
-   ├─ App.tsx: setIsMenuOpen(false)
+   ├─ app/App.tsx: setIsMenuOpen(false)
    └─ useLockBodyScroll: desbloqueia scroll
 
 3. Clique em CTA ("Marque uma aula")
    ├─ HeroSection/CTASection: onClick → onCTAClick
-   ├─ App.tsx: handleCTAClick()
+   ├─ app/App.tsx: handleCTAClick()
    ├─ useSmoothScroll.scrollToElement('cta-section')
    └─ Browser: rola até seção de CTA
 
@@ -222,7 +239,7 @@ App.tsx
 ## Estado Global vs Local
 
 ```
-GLOBAL STATE (App.tsx)
+GLOBAL STATE (app/App.tsx)
 ├─ isMenuOpen: boolean
 │  └─ Usado por: Navbar, MobileMenu, useLockBodyScroll
 │
@@ -269,20 +286,20 @@ ButtonPrimary
 
 ```
 Bundle Size
-├─ Original App.tsx: 713 linhas em 1 arquivo
-├─ Refactored: 30 arquivos com ~1500 linhas total
-└─ Resultado: Melhor tree-shaking potencial
+├─ app/App.tsx: 80 linhas focadas apenas na composição
+├─ Landing feature: layout, sections e ui divididos por responsabilidade
+└─ Resultado: facilita tree-shaking e manutenção incremental
 
 Code Splitting Oportunidades
 ├─ Cada section pode ser lazy-loaded se necessário
-├─ React.lazy + Suspense ready
-└─ Não implementado agora (não necessário)
+├─ React.lazy + Suspense preparados para adoção futura
+└─ Ainda não implementado (não necessário no momento)
 
 Re-renders
 ├─ Cada section renderiza independentemente
 ├─ Props são estáveis (funções não recreadas)
 ├─ Sem useCallback/useMemo necessários (performance OK)
-└─ Total re-renders: Minimal
+└─ Total de re-renders: mínimo
 ```
 
 ---

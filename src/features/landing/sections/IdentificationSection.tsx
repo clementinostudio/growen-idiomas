@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reveal, SectionTitle } from '../ui';
-import { PAIN_POINTS } from '../../constants';
+import { PAIN_POINTS } from '../../../constants';
 
 export const IdentificationSection: React.FC = () => {
   return (

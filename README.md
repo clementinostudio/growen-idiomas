@@ -1,20 +1,24 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Growen Idiomas
 
-# Run and deploy your AI Studio app
+Landing page da Growen Idiomas, focada em alta conversão para cursos de inglês com ênfase em conversação.
 
-This contains everything you need to run your app locally.
+## Tecnologias
 
-View your app in AI Studio: https://ai.studio/apps/drive/1RAyVujeI3_asf9drP7pj4GNzTR6inMl1
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-## Run Locally
+## Como executar
 
-**Prerequisites:**  Node.js
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
+2. Execute o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3. Abra `http://localhost:3000` no seu navegador.

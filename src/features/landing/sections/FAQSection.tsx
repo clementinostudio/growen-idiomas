@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Reveal } from '../ui';
-import { FAQ_ITEMS } from '../../constants';
+import { FAQ_ITEMS } from '../../../constants';
 
 export const FAQSection: React.FC = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);

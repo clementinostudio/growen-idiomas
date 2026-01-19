@@ -4,11 +4,14 @@
 
 ```
 src/
-├── App.tsx                    # Composição principal
-├── components/
-│   ├── layout/                # Componentes de layout (navbar, footer, etc)
-│   ├── sections/              # Seções da landing page
-│   └── ui/                    # Componentes reutilizáveis
+├── app/
+│   ├── App.tsx                # Composição principal da página
+│   └── index.ts               # Reexporta o App
+├── features/
+│   └── landing/
+│       ├── layout/            # Navbar, footer, whatsapp flutuante
+│       ├── sections/          # Seções da landing page
+│       └── ui/                # Componentes reutilizáveis compartilhados
 ├── hooks/                     # Hooks customizados
 ├── constants/                 # Dados e constantes
 └── types/                     # Tipos TypeScript
@@ -17,7 +20,7 @@ src/
 ## Como Adicionar uma Nova Seção
 
 ### 1. Criar o componente
-Crie um arquivo em `src/components/sections/NovaSection.tsx`:
+Crie um arquivo em `src/features/landing/sections/NovaSection.tsx`:
 
 ```tsx
 import React from 'react';
@@ -46,7 +49,7 @@ export const NovaSection: React.FC<NovaSectionProps> = ({ onAction }) => {
 ```
 
 ### 2. Exportar no índice
-Adicione em `src/components/sections/index.ts`:
+Adicione em `src/features/landing/sections/index.ts`:
 
 ```ts
 export { NovaSection } from './NovaSection';
@@ -54,7 +57,7 @@ export { NovaSection } from './NovaSection';
 
 ### 3. Importar e usar em App.tsx
 ```tsx
-import { NovaSection } from './components/sections';
+import { NovaSection } from '../features/landing/sections';
 
 const App: React.FC = () => {
   return (
@@ -114,7 +117,7 @@ export const MeuComponente: React.FC = () => {
 
 Componentes UI são reutilizáveis e não devem conter lógica complexa.
 
-Crie em `src/components/ui/MeuBotao.tsx`:
+Crie em `src/features/landing/ui/MeuBotao.tsx`:
 
 ```tsx
 import React from 'react';
@@ -149,7 +152,7 @@ export const MeuBotao: React.FC<MeuBotaoProps> = ({
 };
 ```
 
-Exporte em `src/components/ui/index.ts` e use:
+Exporte em `src/features/landing/ui/index.ts` e use:
 
 ```tsx
 import { MeuBotao } from '@/components/ui';
