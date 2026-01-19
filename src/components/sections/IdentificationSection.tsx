@@ -19,14 +19,14 @@ export const IdentificationSection: React.FC = () => {
                 label="Para quem é a Growen?"
                 title={
                   <>
-                    Você entende inglês.
+                    Fale inglês de verdade,
                     <br />
                     <span className="text-[#22c55e]">
-                      Mas trava na hora de falar.
+                      com confiança desde o primeiro dia.
                     </span>
                   </>
                 }
-                description="Se você já tentou outros cursos, decorou regras, fez exercícios e mesmo assim fica inseguro ao se comunicar, a Growen foi criada exatamente para você."
+                description="Se já tentou aprender de outras formas ou está começando agora, e sente dificuldade para se comunicar, a Growen foi feita para você."
               />
             </Reveal>
 
