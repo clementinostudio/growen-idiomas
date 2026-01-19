@@ -22,13 +22,13 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:url" content="https://growenidiomas.com.br/" />
+  <meta property="og:url" content="https://www.growenidiomas.com.br/" />
   <meta property="og:title" content="Curso de Inglês Online Focado em Conversação | Growen Idiomas" />
   <meta
     property="og:description"
     content="Pare de estudar inglês sem resultado. Aprenda a falar com aulas práticas, ao vivo e personalizadas. Agende sua aula teste."
   />
-  <meta property="og:image" content="https://growenidiomas.com.br/og-image.jpg" />
+  <meta property="og:image" content="https://www.growenidiomas.com.br/og-image.jpg" />
   <meta property="og:site_name" content="Growen Idiomas" />
 
   <!-- Twitter -->
@@ -38,22 +38,14 @@
     name="twitter:description"
     content="Metodologia ativa para aprender inglês de verdade e falar com confiança."
   />
-  <meta name="twitter:image" content="https://growenidiomas.com.br/og-image.jpg" />
+  <meta name="twitter:image" content="https://www.growenidiomas.com.br/og-image.jpg" />
 
-  <!-- Preconnect Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/index.css" />
@@ -77,17 +69,31 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Questrial', sans-serif; background-color: #ffffff; color: #111827; }
     .font-satoshi { font-family: 'Satoshi', sans-serif; }
-    .bg-dot-pattern { background-image: radial-gradient(currentColor 1px, transparent 1px); background-size: 32px 32px; }
+    .bg-dot-pattern {
+      background-image: radial-gradient(currentColor 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
   </style>
 
-  <!-- Structured Data -->
+  <!-- Structured Data: WebSite (CRÍTICO PARA O NOME NO GOOGLE) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Growen Idiomas",
+    "alternateName": "Growen",
+    "url": "https://www.growenidiomas.com.br/"
+  }
+  </script>
+
+  <!-- Structured Data: Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "Growen Idiomas",
-    "url": "https://growenidiomas.com.br",
-    "logo": "https://growenidiomas.com.br/arquivos/logoGrowen.svg",
+    "url": "https://www.growenidiomas.com.br/",
+    "logo": "https://www.growenidiomas.com.br/arquivos/logoGrowen.svg",
     "description": "Curso de inglês online com metodologia ativa focada em conversação real.",
     "sameAs": [
       "https://www.instagram.com/growenidiomas",
@@ -116,18 +122,14 @@
   }
   </script>
 
-  <!-- Animated Title (suave e contínuo) -->
+  <!-- Animated Title (OK para UX, irrelevante para SEO) -->
   <script>
     const pageTitle = "Curso de Inglês Online Focado em Conversação | Growen Idiomas ";
     let idx = 0;
-
-    function animateTitle() {
-      // Texto "rodando" suavemente
-      document.title = pageTitle.substring(idx) + pageTitle.substring(0, idx);
+    setInterval(() => {
+      document.title = pageTitle.slice(idx) + pageTitle.slice(0, idx);
       idx = (idx + 1) % pageTitle.length;
-    }
-
-    setInterval(animateTitle, 200); // Ajuste velocidade: 200ms = suave e contínuo
+    }, 200);
   </script>
 </head>
 
