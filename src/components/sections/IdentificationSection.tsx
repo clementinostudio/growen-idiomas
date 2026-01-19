@@ -19,10 +19,10 @@ export const IdentificationSection: React.FC = () => {
                 label="Para quem é a Growen?"
                 title={
                   <>
-                    Fale inglês de verdade,
+                    Fale inglês com confiança,
                     <br />
                     <span className="text-[#22c55e]">
-                      com confiança desde o primeiro dia.
+                      desde o primeiro dia.
                     </span>
                   </>
                 }
