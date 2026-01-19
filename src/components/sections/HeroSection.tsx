@@ -157,7 +157,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                   className="group relative flex items-center gap-4 pl-6 pr-2 py-2 bg-[#22c55e] hover:bg-[#1eb053] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
                 >
                   <span className="font-satoshi font-bold text-lg tracking-wide">
-                    Agendar aula teste gratuita
+                    Agendar aula experimental gratuita
                   </span>
 
                   <div className="relative w-12 h-12 bg-black rounded-full flex items-center justify-center overflow-hidden">

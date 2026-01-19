@@ -17,97 +17,70 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavClick,
   onLogoClick,
 }) => {
-  const navTextClass = 'text-gray-300 hover:text-white';
-  const navLogoClass = 'text-white';
-  const navIconClass = 'text-gray-400 hover:text-white';
-  const navToggleClass = 'text-white';
-
+  const linkClass = 'text-gray-300 hover:text-green-500 transition-colors duration-300 font-medium';
+  const iconClass = 'text-gray-400 hover:text-green-500 transition-colors duration-300';
+  
   return (
     <nav
       className={`fixed w-full z-50 transition-colors duration-300 ease-in-out ${
         isMenuOpen
           ? 'bg-[#050505] py-4'
           : scrolled
-            ? 'bg-[#050505]/95 backdrop-blur-md border-b border-white/5 py-4 shadow-sm shadow-black/50'
-            : 'bg-transparent border-transparent py-6'
+            ? 'bg-[#050505]/95 backdrop-blur-md border-b border-white/5 py-4 shadow-sm'
+            : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <a
-            href="#"
-            onClick={onLogoClick}
-            className="flex items-center gap-3 group cursor-pointer"
-          >
-            <img
-              src="/arquivos/logoGrowen.svg"
-              alt="Growen Idiomas Logo"
-              className="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
-            />
-            <span
-              className={`font-medium text-lg tracking-wide group-hover:text-green-600 transition-colors ${navLogoClass}`}
-            >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        {/* Logo + Tagline */}
+        <a
+          href="#"
+          onClick={onLogoClick}
+          className="flex items-center gap-3 cursor-pointer group"
+        >
+          <img
+            src="/arquivos/logoGrowen.svg"
+            alt="Growen Idiomas Logo"
+            className="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+          <div className="flex flex-col leading-tight">
+            <span className="text-white font-semibold text-lg group-hover:text-green-500 transition-colors">
               Growen Idiomas
             </span>
-          </a>
-
-          {/* Center Links */}
-          <div className="hidden md:flex items-center gap-8">
-            <a
-              href="#para-quem"
-              onClick={(e) => onNavClick(e, 'para-quem')}
-              className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}
-            >
-              Para quem
-            </a>
-            <a
-              href="#quem-somos"
-              onClick={(e) => onNavClick(e, 'quem-somos')}
-              className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}
-            >
-              Quem somos
-            </a>
-            <a
-              href="#depoimentos"
-              onClick={(e) => onNavClick(e, 'depoimentos')}
-              className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}
-            >
-              Soluções
-            </a>
-            <a
-              href="#contato"
-              onClick={(e) => onNavClick(e, 'contato')}
-              className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}
-            >
-              Contato
-            </a>
+            <span className="text-gray-400 text-xs tracking-wide">
+              Time to Grow
+            </span>
           </div>
+        </a>
 
-          {/* Right Social Icons */}
-          <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-4">
-              <a href="#" className={`transition-colors ${navIconClass}`}>
-                <Facebook size={20} strokeWidth={1.5} />
-              </a>
-              <a href="#" className={`transition-colors ${navIconClass}`}>
-                <WhatsAppIcon className="w-5 h-5" />
-              </a>
-              <a href="#" className={`transition-colors ${navIconClass}`}>
-                <Instagram size={20} strokeWidth={1.5} />
-              </a>
-            </div>
-          </div>
-
-          {/* Mobile Toggle */}
-          <div className="md:hidden flex items-center gap-4">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${navToggleClass} p-2 hover:bg-white/10 rounded-full transition-colors`}
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-8">
+          {['para-quem', 'quem-somos', 'depoimentos', 'contato'].map((id, idx) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => onNavClick(e, id)}
+              className={linkClass}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+              {['Para quem', 'Quem somos', 'Soluções', 'Contato'][idx]}
+            </a>
+          ))}
+        </div>
+
+        {/* Social Icons Desktop */}
+        <div className="hidden md:flex items-center gap-4">
+          <a href="#" className={iconClass}><Facebook size={20} strokeWidth={1.5} /></a>
+          <a href="#" className={iconClass}><WhatsAppIcon className="w-5 h-5" /></a>
+          <a href="#" className={iconClass}><Instagram size={20} strokeWidth={1.5} /></a>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
     </nav>
