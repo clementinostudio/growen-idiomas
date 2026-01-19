@@ -26,7 +26,7 @@ export const IdentificationSection: React.FC = () => {
                     </span>
                   </>
                 }
-                description="Se já tentou aprender de outras formas ou está começando agora, e sente dificuldade para se comunicar, a Growen foi feita para você."
+                description="Seja no começo da jornada ou depois de outras tentativas, se falar inglês ainda parece difícil, a Growen existe para destravar sua comunicação de forma natural e confiante."
               />
             </Reveal>
 
