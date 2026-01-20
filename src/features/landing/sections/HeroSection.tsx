@@ -80,7 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
           className="w-[360px] opacity-10"
           width="360"
           height="100"
-          fetchpriority="high"
+          fetchPriority="high"
         />
       </div>
 
