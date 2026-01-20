@@ -74,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={(e) => onNavClick(e, 'depoimentos')}
               className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}
             >
-              Soluções
+              Alunos
             </a>
             <a
               href="#contato"
