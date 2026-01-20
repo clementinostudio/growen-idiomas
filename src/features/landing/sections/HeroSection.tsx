@@ -60,12 +60,32 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-[#050505]">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-black isolate">
+      {/* Background with Forced Green Tint */}
+      <div className="absolute inset-0 z-0 bg-black">
+        {/* 1. Base Image - High Constast Grayscale */}
+        <img
+            src="/arquivos/space-bg.jpg"
+            alt=""
+            className="w-full h-full object-cover opacity-70 grayscale contrast-150"
+        />
+        {/* 2. Colorizer Layer - Maps White to Green */}
+        <div className="absolute inset-0 bg-green-600 mix-blend-overlay opacity-100" />
+        
+        {/* 3. Extra Glow for highlights */}
+        <div className="absolute inset-0 bg-green-500/30 mix-blend-color-dodge" />
+
+        {/* 4. Vignette / Fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black" />
+      </div>
+      
+      {/* Texture Overlay (Ring) */}
+      <div className="pointer-events-none absolute inset-0 ring-1 ring-white/10" />
+
       {/* BACKGROUND OVERLAYS */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-black/5" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-        <div className="absolute inset-0 opacity-[0.1] bg-[radial-gradient(circle_at_2px_2px,#fff_1px,transparent_0)] bg-[size:42px_42px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
       </div>
 
 
