@@ -132,7 +132,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
               <Reveal delay={200}>
                 <h1 className="text-5xl md:text-7xl font-satoshi font-bold leading-[1.05] tracking-tight text-white">
-                  <span className="block text-[#22c55e]">
+                  <span className="block text-green-400">
                     Pare de estudar inglês.
                   </span>
                   <span className="block">Comece a falar.</span>
@@ -153,7 +153,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                       '_blank'
                     )
                   }
-                  className="group relative flex items-center gap-4 pl-6 pr-2 py-2 bg-[#22c55e] hover:bg-[#1eb053] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+                  className="group relative flex items-center gap-4 pl-6 pr-2 py-2 bg-[#15803d] hover:bg-[#166534] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
                 >
                   <span className="font-satoshi font-bold text-lg tracking-wide">
                     Agendar aula experimental gratuita
@@ -166,7 +166,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
                 <div className="mt-4 space-y-1">
                   <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <span className="text-[#22c55e] font-bold">
+                    <span className="text-[#15803d] font-bold">
                       +300 alunos
                     </span>
                     <span>já falando inglês com a Growen</span>

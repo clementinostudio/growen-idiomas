@@ -27,7 +27,7 @@ export const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
     return (
       <a
         href={href}
-        className="group relative flex items-center gap-4 pl-8 pr-2 py-2 bg-[#22c55e] hover:bg-[#1eb053] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+        className="group relative flex items-center gap-4 pl-8 pr-2 py-2 bg-[#15803d] hover:bg-[#166534] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
       >
         {content}
       </a>
@@ -37,7 +37,7 @@ export const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
   return (
     <button
       onClick={onClick}
-      className="group relative flex items-center gap-4 pl-8 pr-2 py-2 bg-[#22c55e] hover:bg-[#1eb053] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+      className="group relative flex items-center gap-4 pl-8 pr-2 py-2 bg-[#15803d] hover:bg-[#166534] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
     >
       {content}
     </button>

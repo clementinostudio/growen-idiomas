@@ -23,7 +23,7 @@ export const TestimonialsSection: React.FC = () => {
                 {[1, 2, 3, 4, 5].map((s) => (
                   <Star
                     key={s}
-                    className="w-4 h-4 text-[#22c55e] fill-current"
+                    className="w-4 h-4 text-[#15803d] fill-current"
                   />
                 ))}
               </div>

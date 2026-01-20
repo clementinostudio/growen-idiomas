@@ -49,7 +49,7 @@ export const MethodologySection: React.FC = () => {
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-satoshi font-bold text-gray-900 mb-10 tracking-tight leading-tight">
                 Uma metodologia feita para quem quer{' '}
-                <span className="text-[#22c55e]">falar inglês</span>,
+                <span className="text-green-700">falar inglês</span>,
                 <br />
                 não decorar regras
               </h2>
@@ -69,7 +69,7 @@ export const MethodologySection: React.FC = () => {
               <p className="text-xl font-satoshi font-bold text-gray-900">
                 Menos tempo estudando.
                 <br />
-                <span className="text-[#22c55e]">
+                <span className="text-[#15803d]">
                   Mais tempo falando inglês.
                 </span>
               </p>
@@ -88,7 +88,7 @@ export const MethodologySection: React.FC = () => {
                   {/* Icon */}
                   <div className="shrink-0 pt-1">
                     <pillar.icon
-                      className="w-6 h-6 text-[#22c55e]"
+                      className="w-6 h-6 text-[#15803d]"
                       strokeWidth={1.5}
                     />
                   </div>

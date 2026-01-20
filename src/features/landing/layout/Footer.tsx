@@ -45,11 +45,11 @@ export const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-400">
           <p>© {currentYear} Growen Idiomas.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">
-              <Instagram size={18} />
+            <a href="#" className="hover:text-white transition-colors" aria-label="Instagram" title="Instagram">
+              <Instagram size={18} aria-hidden={true} />
             </a>
-            <a href="#" className="hover:text-white transition-colors">
-              <Facebook size={18} />
+            <a href="#" className="hover:text-white transition-colors" aria-label="Facebook" title="Facebook">
+              <Facebook size={18} aria-hidden={true} />
             </a>
           </div>
         </div>

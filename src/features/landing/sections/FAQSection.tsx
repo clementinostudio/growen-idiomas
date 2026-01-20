@@ -32,7 +32,7 @@ export const FAQSection: React.FC = () => {
                     <span
                       className={`font-medium text-lg transition-colors duration-300 ${
                         isOpen
-                          ? 'text-[#22c55e]'
+                          ? 'text-green-400'
                           : 'text-gray-200 group-hover:text-white'
                       }`}
                     >
@@ -47,7 +47,7 @@ export const FAQSection: React.FC = () => {
                       <ChevronDown
                         className={`w-5 h-5 ${
                           isOpen
-                            ? 'text-[#22c55e]'
+                            ? 'text-[#15803d]'
                             : 'text-gray-500 group-hover:text-white'
                         }`}
                       />

@@ -9,7 +9,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onCTAClick }) => {
   return (
     <section
       id="cta-section"
-      className="py-32 bg-[#22c55e] text-center px-4 relative overflow-hidden"
+      className="py-32 bg-[#15803d] text-center px-4 relative overflow-hidden"
     >
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center justify-center">
         <div className="text-center max-w-2xl">

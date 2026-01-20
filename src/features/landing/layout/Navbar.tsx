@@ -102,10 +102,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Mobile Toggle */}
           <div className="md:hidden flex items-center gap-4">
             <button
+              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
               className={`${navToggleClass} p-2 hover:bg-white/10 rounded-full transition-colors`}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={24} aria-hidden={true} /> : <Menu size={24} aria-hidden={true} />}
             </button>
           </div>
         </div>

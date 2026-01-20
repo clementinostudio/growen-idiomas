@@ -12,7 +12,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
   description,
 }) => (
   <div>
-    <span className="text-[#22c55e] font-bold tracking-widest uppercase text-xs mb-6 block">
+    <span className="text-[#15803d] font-bold tracking-widest uppercase text-xs mb-6 block">
       {label}
     </span>
     <h2 className="text-3xl md:text-4xl font-satoshi font-bold mb-6 text-gray-900 leading-tight">

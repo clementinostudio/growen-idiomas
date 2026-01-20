@@ -10,6 +10,10 @@ interface MobileMenuProps {
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) => {
   return (
     <div
+      id="mobile-menu"
+      role="dialog"
+      aria-modal={true}
+      aria-hidden={!isOpen}
       className={`
         md:hidden fixed inset-0 bg-[#050505] z-40 pt-24
         transition-opacity duration-300 ease-in-out
@@ -53,14 +57,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) =>
         </a>
 
         <div className="flex gap-8 mt-8 pt-8 border-t border-white/10 w-full justify-center">
-          <a href="#" className="text-gray-400 hover:text-green-500">
-            <Instagram size={28} />
+          <a href="#" className="text-gray-400 hover:text-green-500" aria-label="Instagram" title="Instagram">
+            <Instagram size={28} aria-hidden={true} />
           </a>
-          <a href="#" className="text-gray-400 hover:text-green-500">
-            <WhatsAppIcon className="w-7 h-7" />
+          <a href="#" className="text-gray-400 hover:text-green-500" aria-label="WhatsApp" title="WhatsApp">
+            <WhatsAppIcon className="w-7 h-7" aria-hidden={true} />
           </a>
-          <a href="#" className="text-gray-400 hover:text-green-500">
-            <Facebook size={28} />
+          <a href="#" className="text-gray-400 hover:text-green-500" aria-label="Facebook" title="Facebook">
+            <Facebook size={28} aria-hidden={true} />
           </a>
         </div>
       </div>
