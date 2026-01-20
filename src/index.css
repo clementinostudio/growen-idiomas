@@ -14,3 +14,29 @@
   background-image: radial-gradient(currentColor 1px, transparent 1px);
   background-size: 32px 32px;
 }
+
+/* ==========================
+   Hide scrollbar globally
+   Keeps scrolling functional but hides the UI
+   Cross-browser: Firefox, WebKit, IE
+   ========================== */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+* {
+  scrollbar-color: transparent transparent; /* Firefox fallback */
+}
+
+/* WebKit browsers */
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
