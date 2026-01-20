@@ -194,7 +194,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                 src="/arquivos/MelvinM.svg"
                 alt="Mascote Growen"
                 className="w-full max-w-[650px] object-contain drop-shadow-2xl"
-                loading="lazy"
+                fetchPriority="high"
                 width="650"
                 height="800"
                 style={{

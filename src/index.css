@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Questrial', sans-serif; background-color: #ffffff; color: #111827; }
+.font-satoshi { font-family: 'Satoshi', sans-serif; }
+.bg-dot-pattern {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 32px 32px;
+}

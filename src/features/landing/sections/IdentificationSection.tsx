@@ -62,6 +62,7 @@ export const IdentificationSection: React.FC = () => {
                 src="/arquivos/MelvinPunho.svg"
                 alt="Mascote Growen"
                 className="w-full h-full object-contain drop-shadow-xl"
+                loading="lazy"
               />
             </div>
           </Reveal>

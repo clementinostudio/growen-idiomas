@@ -102,6 +102,7 @@ export const VisionSection: React.FC = () => {
                 className="relative w-full max-w-[480px] object-contain"
                 width="480"
                 height="600"
+                loading="lazy"
               />
             </div>
           </Reveal>
