@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
-import EnergyBeam from '@/components/ui/EnergyBeam';
 
 /* =========================================================
  * COMPONENTE: Reveal
@@ -62,11 +61,6 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-[#050505]">
-      {/* ENERGY BEAM BACKGROUND */}
-      <div className="absolute inset-0 z-0">
-        <EnergyBeam className="w-full h-full opacity-60 mix-blend-screen hue-rotate-110 saturate-200" />
-      </div>
-
       {/* BACKGROUND OVERLAYS */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-black/5" />
