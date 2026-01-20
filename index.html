@@ -96,6 +96,24 @@
   }
   </script>
 
+  <!-- Preload Fonts -->
+  <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Preload Critical Image -->
+  <link rel="preload" href="/arquivos/MelvinM.svg" as="image" type="image/svg+xml" />
+
+  <!-- Inline Critical CSS -->
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Questrial', sans-serif; background-color: #ffffff; color: #111827; }
+    .font-satoshi { font-family: 'Satoshi', sans-serif; }
+    .bg-dot-pattern {
+      background-image: radial-gradient(currentColor 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+  </style>
+
   <!-- Animated Title (removido para manter título estável para SEO) -->
 </head>
 
