@@ -5,6 +5,7 @@ import {
   MobileMenu,
   Footer,
   FloatingWhatsApp,
+  BackToTop,
 } from '../features/landing/layout';
 import {
   HeroSection,
@@ -71,6 +72,8 @@ const App: React.FC = () => {
       <CTASection onCTAClick={handleCTAClick} />
 
       <Footer />
+
+      <BackToTop />
 
       <FloatingWhatsApp />
     </div>
