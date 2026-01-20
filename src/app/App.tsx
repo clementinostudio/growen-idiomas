@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { useLockBodyScroll, useScrollPosition, useSmoothScroll } from '../hooks';
 import {
   Navbar,
@@ -7,17 +7,62 @@ import {
   FloatingWhatsApp,
   BackToTop,
 } from '../features/landing/layout';
-import {
-  HeroSection,
-  IdentificationSection,
-  MethodologySection,
-  AboutSection,
-  VisionSection,
-  StepsSection,
-  TestimonialsSection,
-  FAQSection,
-  CTASection,
-} from '../features/landing/sections';
+import { HeroSection } from '../features/landing/sections/HeroSection';
+
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const IdentificationSection = lazy(() =>
+  import('../features/landing/sections/IdentificationSection').then((module) => ({
+    default: module.IdentificationSection,
+  }))
+);
+
+const MethodologySection = lazy(() =>
+  import('../features/landing/sections/MethodologySection').then((module) => ({
+    default: module.MethodologySection,
+  }))
+);
+
+const AboutSection = lazy(() =>
+  import('../features/landing/sections/AboutSection').then((module) => ({
+    default: module.AboutSection,
+  }))
+);
+
+const VisionSection = lazy(() =>
+  import('../features/landing/sections/VisionSection').then((module) => ({
+    default: module.VisionSection,
+  }))
+);
+
+const StepsSection = lazy(() =>
+  import('../features/landing/sections/StepsSection').then((module) => ({
+    default: module.StepsSection,
+  }))
+);
+
+const TestimonialsSection = lazy(() =>
+  import('../features/landing/sections/TestimonialsSection').then((module) => ({
+    default: module.TestimonialsSection,
+  }))
+);
+
+const FAQSection = lazy(() =>
+  import('../features/landing/sections/FAQSection').then((module) => ({
+    default: module.FAQSection,
+  }))
+);
+
+const CTASection = lazy(() =>
+  import('../features/landing/sections/CTASection').then((module) => ({
+    default: module.CTASection,
+  }))
+);
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,6 +70,64 @@ const App: React.FC = () => {
   const { scrollToElement, scrollToTop } = useSmoothScroll();
 
   useLockBodyScroll(isMenuOpen);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      void Promise.all([
+        import('../features/landing/sections/IdentificationSection'),
+        import('../features/landing/sections/MethodologySection'),
+        import('../features/landing/sections/AboutSection'),
+        import('../features/landing/sections/VisionSection'),
+        import('../features/landing/sections/StepsSection'),
+        import('../features/landing/sections/TestimonialsSection'),
+        import('../features/landing/sections/FAQSection'),
+        import('../features/landing/sections/CTASection'),
+      ]);
+    }, 500);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      if (document.getElementById('gtm-loader')) {
+        return;
+      }
+
+      window.dataLayer = window.dataLayer || [];
+
+      const script = document.createElement('script');
+      script.id = 'gtm-loader';
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-77ELXGYCSY';
+
+      script.addEventListener('load', () => {
+        const gtag = (...args: unknown[]) => {
+          window.dataLayer!.push(args);
+        };
+
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-77ELXGYCSY', { anonymize_ip: true });
+      });
+
+      document.head.appendChild(script);
+    }, 1500);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -55,21 +158,37 @@ const App: React.FC = () => {
 
       <HeroSection onCTAClick={handleCTAClick} />
 
-      <IdentificationSection />
+      <Suspense fallback={null}>
+        <IdentificationSection />
+      </Suspense>
 
-      <MethodologySection />
+      <Suspense fallback={null}>
+        <MethodologySection />
+      </Suspense>
 
-      <AboutSection onExploreClick={handleCTAClick} />
+      <Suspense fallback={null}>
+        <AboutSection onExploreClick={handleCTAClick} />
+      </Suspense>
 
-      <VisionSection />
+      <Suspense fallback={null}>
+        <VisionSection />
+      </Suspense>
 
-      <StepsSection />
+      <Suspense fallback={null}>
+        <StepsSection />
+      </Suspense>
 
-      <TestimonialsSection />
+      <Suspense fallback={null}>
+        <TestimonialsSection />
+      </Suspense>
 
-      <FAQSection />
+      <Suspense fallback={null}>
+        <FAQSection />
+      </Suspense>
 
-      <CTASection onCTAClick={handleCTAClick} />
+      <Suspense fallback={null}>
+        <CTASection onCTAClick={handleCTAClick} />
+      </Suspense>
 
       <Footer />
 
