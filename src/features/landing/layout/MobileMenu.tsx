@@ -1,6 +1,7 @@
 import React from 'react';
-import { Instagram, Facebook } from 'lucide-react';
-import { WhatsAppIcon } from '../ui/WhatsAppIcon';
+import { Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
+import { TikTokIcon } from '../ui/TikTokIcon';
+import { SOCIAL_LINKS } from '../../../constants';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -56,15 +57,56 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) =>
           Contato
         </a>
 
-        <div className="flex gap-8 mt-8 pt-8 border-t border-white/10 w-full justify-center">
-          <a href="#" className="text-gray-400 hover:text-green-500" aria-label="Instagram" title="Instagram">
+        <div className="flex gap-6 mt-8 pt-8 border-t border-white/10 w-full justify-center flex-wrap">
+          <a
+            href={SOCIAL_LINKS.INSTAGRAM}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-green-500"
+            aria-label="Instagram"
+            title="Instagram"
+          >
             <Instagram size={28} aria-hidden={true} />
           </a>
-          <a href="#" className="text-gray-400 hover:text-green-500" aria-label="WhatsApp" title="WhatsApp">
-            <WhatsAppIcon className="w-7 h-7" aria-hidden={true} />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-green-500" aria-label="Facebook" title="Facebook">
+          <a
+            href={SOCIAL_LINKS.FACEBOOK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-green-500"
+            aria-label="Facebook"
+            title="Facebook"
+          >
             <Facebook size={28} aria-hidden={true} />
+          </a>
+          <a
+            href={SOCIAL_LINKS.LINKEDIN}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-green-500"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <Linkedin size={28} aria-hidden={true} />
+          </a>
+          <a
+            href={SOCIAL_LINKS.YOUTUBE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-green-500"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <Youtube size={28} aria-hidden={true} />
+          </a>
+          <a
+            href={SOCIAL_LINKS.TIKTOK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-green-500"
+            aria-label="TikTok"
+            title="TikTok"
+          >
+            <TikTokIcon className="w-7 h-7" />
           </a>
         </div>
       </div>

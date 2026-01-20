@@ -1,6 +1,7 @@
 import React from 'react';
-import { Menu, X, Facebook, Instagram } from 'lucide-react';
-import { WhatsAppIcon } from '../ui/WhatsAppIcon';
+import { Menu, X, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { TikTokIcon } from '../ui/TikTokIcon';
+import { SOCIAL_LINKS } from '../../../constants';
 
 interface NavbarProps {
   isMenuOpen: boolean;
@@ -87,14 +88,50 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Right Social Icons */}
           <div className="hidden md:flex items-center gap-4">
             <div className="flex items-center gap-4">
-              <a href="#" className={`transition-colors ${navIconClass}`}>
+              <a
+                href={SOCIAL_LINKS.FACEBOOK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`transition-colors ${navIconClass}`}
+                aria-label="Facebook"
+              >
                 <Facebook size={20} strokeWidth={1.5} />
               </a>
-              <a href="#" className={`transition-colors ${navIconClass}`}>
-                <WhatsAppIcon className="w-5 h-5" />
-              </a>
-              <a href="#" className={`transition-colors ${navIconClass}`}>
+              <a
+                href={SOCIAL_LINKS.INSTAGRAM}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`transition-colors ${navIconClass}`}
+                aria-label="Instagram"
+              >
                 <Instagram size={20} strokeWidth={1.5} />
+              </a>
+              <a
+                href={SOCIAL_LINKS.LINKEDIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`transition-colors ${navIconClass}`}
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} strokeWidth={1.5} />
+              </a>
+              <a
+                href={SOCIAL_LINKS.YOUTUBE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`transition-colors ${navIconClass}`}
+                aria-label="YouTube"
+              >
+                <Youtube size={20} strokeWidth={1.5} />
+              </a>
+              <a
+                href={SOCIAL_LINKS.TIKTOK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`transition-colors ${navIconClass}`}
+                aria-label="TikTok"
+              >
+                <TikTokIcon className="w-5 h-5" />
               </a>
             </div>
           </div>

@@ -1,6 +1,8 @@
 import React from 'react';
-import { MapPin, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
+import { TikTokIcon } from '../ui/TikTokIcon';
+import { SOCIAL_LINKS } from '../../../constants';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -34,9 +36,14 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-2">
               <MapPin size={16} /> R. Estéfano Zshoka
             </div>
-            <div className="flex items-center gap-2">
+            <a
+              href={SOCIAL_LINKS.WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white transition-colors"
+            >
               <WhatsAppIcon className="w-4 h-4" /> (43) 99653-6535
-            </div>
+            </a>
             <div>hello@growen.com</div>
           </div>
         </div>
@@ -45,11 +52,50 @@ export const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-400">
           <p>© {currentYear} Growen Idiomas.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors" aria-label="Instagram" title="Instagram">
+            <a
+              href={SOCIAL_LINKS.INSTAGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+              aria-label="Instagram"
+            >
               <Instagram size={18} aria-hidden={true} />
             </a>
-            <a href="#" className="hover:text-white transition-colors" aria-label="Facebook" title="Facebook">
+            <a
+              href={SOCIAL_LINKS.FACEBOOK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+              aria-label="Facebook"
+            >
               <Facebook size={18} aria-hidden={true} />
+            </a>
+            <a
+              href={SOCIAL_LINKS.LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} aria-hidden={true} />
+            </a>
+            <a
+              href={SOCIAL_LINKS.YOUTUBE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+              aria-label="YouTube"
+            >
+              <Youtube size={18} aria-hidden={true} />
+            </a>
+            <a
+              href={SOCIAL_LINKS.TIKTOK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+              aria-label="TikTok"
+            >
+              <TikTokIcon className="w-4 h-4" />
             </a>
           </div>
         </div>

@@ -323,3 +323,12 @@ export const FAQ_ITEMS: FaqItem[] = [
     answer: "É conversação com base sólida. A gramática e o vocabulário são ensinados de forma contextualizada e prática. Você entende o 'porquê' das regras usando-as, não apenas decorando."
   }
 ];
+
+export const SOCIAL_LINKS = {
+  YOUTUBE: "https://www.youtube.com/@growenidiomas",
+  FACEBOOK: "https://www.facebook.com/profile.php?id=61564763555348",
+  INSTAGRAM: "https://www.instagram.com/growen.idiomas/",
+  TIKTOK: "https://www.tiktok.com/@growenidiomas",
+  LINKEDIN: "https://www.linkedin.com/company/growenidiomas",
+  WHATSAPP: "https://wa.me/43996536535?text=quero%20minha%20aula%20teste"
+};
