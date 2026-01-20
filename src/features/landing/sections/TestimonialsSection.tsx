@@ -1,54 +1,58 @@
 import React from 'react';
-import { Star } from 'lucide-react';
-import { Reveal } from '../ui';
+import { motion } from 'motion/react';
+import { TestimonialsColumn } from '@/components/ui/TestimonialsColumn';
 import { TESTIMONIALS } from '../../../constants';
+import { Reveal } from '../ui';
+
+// Expandindo os depoimentos para preencher as colunas
+const testimonialsData = [
+  ...TESTIMONIALS,
+  ...TESTIMONIALS,
+  ...TESTIMONIALS,
+  ...TESTIMONIALS
+].map((t, idx) => ({
+  ...t,
+  // Mantemos a estrutura compatível com TestimonialsColumn
+}));
+
+// Dividindo em colunas
+const firstColumn = testimonialsData.slice(0, 4);
+const secondColumn = testimonialsData.slice(4, 8);
+const thirdColumn = testimonialsData.slice(8, 12);
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section id="depoimentos" className="py-32 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="depoimentos" className="bg-gray-50 py-24 relative overflow-hidden">
+      <div className="container z-10 mx-auto px-4">
         <Reveal>
-          <h2 className="text-3xl font-bold mb-16 text-gray-900 font-satoshi">
-            O que dizem sobre nós
-          </h2>
+          <div className="flex flex-col items-center justify-center max-w-[640px] mx-auto mb-12">
+            <div className="flex justify-center mb-6">
+              <span className="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm font-medium text-gray-600 shadow-sm">
+                Depoimentos
+              </span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-center text-gray-900 font-satoshi mb-6">
+              O que dizem sobre nós
+            </h2>
+            <p className="text-center text-lg text-gray-600 max-w-lg mx-auto leading-relaxed">
+              Veja como nossos alunos estão transformando suas vidas e carreiras através do inglês.
+            </p>
+          </div>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-gray-200 pt-12">
-          {TESTIMONIALS.map((testimonial, index) => (
-            <Reveal
-              key={testimonial.id}
-              delay={index * 150}
-              className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
-            >
-              <div className="flex gap-1 mb-4">
-                {[1, 2, 3, 4, 5].map((s) => (
-                  <Star
-                    key={s}
-                    className="w-4 h-4 text-[#15803d] fill-current"
-                  />
-                ))}
-              </div>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6 font-medium">
-                "{testimonial.text}"
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-bold text-sm text-gray-900">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-xs text-gray-500 uppercase tracking-wide">
-                    {testimonial.role}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+
+        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] max-h-[700px] overflow-hidden -mx-4 sm:mx-0">
+          <TestimonialsColumn testimonials={firstColumn} duration={25} className="flex-1 min-w-[300px]" />
+          <TestimonialsColumn 
+            testimonials={secondColumn} 
+            className="hidden md:block flex-1 min-w-[300px]" 
+            duration={35} 
+          />
+          <TestimonialsColumn 
+            testimonials={thirdColumn} 
+            className="hidden lg:block flex-1 min-w-[300px]" 
+            duration={30} 
+          />
         </div>
       </div>
     </section>

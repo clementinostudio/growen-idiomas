@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme inline {
+  --color-background: var(--bg-dark);
+  --color-foreground: #ffffff;
+}
+
+:root {
+  --bg-dark: #000000;
+}
+
 /* Mantém apenas estilos não críticos */
 .bg-dot-pattern {
   background-image: radial-gradient(currentColor 1px, transparent 1px);
