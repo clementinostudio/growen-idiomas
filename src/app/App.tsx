@@ -1,4 +1,5 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useLockBodyScroll, useScrollPosition, useSmoothScroll } from '../hooks';
 import {
   Navbar,
@@ -195,6 +196,7 @@ const App: React.FC = () => {
       <BackToTop />
 
       <FloatingWhatsApp />
+      <SpeedInsights />
     </div>
   );
 };
