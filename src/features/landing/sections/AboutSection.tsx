@@ -55,7 +55,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ item, delay, onOpen, index })
         aria-label={`Abrir imagem: ${item.label}`}
         onClick={() => onOpen(index)}
         onKeyDown={(e) => e.key === 'Enter' && onOpen(index)}
-        className={`relative group rounded-3xl overflow-hidden shadow-sm cursor-pointer ${item.aspect} focus:outline-none focus:ring-4 focus:ring-[#7ed957]/30 transform-gpu transition-transform duration-500 will-change-transform hover:scale-105 hover:-translate-y-1 hover:shadow-2xl focus:scale-105`}
+        className={`relative group rounded-3xl overflow-hidden shadow-sm cursor-pointer ${item.aspect} focus:outline-none focus:ring-4 focus:ring-[#15803d]/30 transform-gpu transition-transform duration-500 will-change-transform hover:scale-105 hover:-translate-y-1 hover:shadow-2xl focus:scale-105`}
       >
         {/* Image */}
         <img
@@ -170,7 +170,7 @@ const ImageModal: React.FC<ModalProps> = ({ index, items, onClose, onPrev, onNex
               key={it.src}
               onClick={(e) => { e.stopPropagation(); /* focus this image */ }}
               aria-label={`Ver ${it.label}`}
-              className={`rounded-lg overflow-hidden border-2 ${i === index ? 'border-[#7ed957]' : 'border-transparent'} shrink-0 w-20 h-12`}
+              className={`rounded-lg overflow-hidden border-2 ${i === index ? 'border-[#15803d]' : 'border-transparent'} shrink-0 w-20 h-12`}
               onMouseDown={(e) => e.stopPropagation()}
             >
               <img src={it.src} alt={it.label} className="w-full h-full object-cover" />
@@ -210,7 +210,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-end">
           <div className="max-w-3xl">
             <Reveal>
-              <span className="text-[#7ed957] font-bold tracking-widest uppercase text-xs mb-4 block">
+              <span className="text-[#15803d] font-bold tracking-widest uppercase text-xs mb-4 block">
                 Quem Somos
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
@@ -230,7 +230,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
 
                 <button
                   onClick={onExploreClick}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#7ed957] hover:underline"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#15803d] hover:underline"
                 >
                   Veja como funcionam nossas aulas
                   <ArrowRight className="w-4 h-4" />
@@ -256,7 +256,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
             <Reveal delay={450}>
               <button
                 onClick={onExploreClick}
-                className="group flex items-center justify-between border-b border-gray-200 pb-4 text-lg font-bold hover:text-[#7ed957] hover:border-[#7ed957] transition"
+                className="group flex items-center justify-between border-b border-gray-200 pb-4 text-lg font-bold hover:text-[#15803d] hover:border-[#15803d] transition"
               >
                 <span>Conheça nossa estrutura</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />

@@ -31,28 +31,28 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) =>
         <a
           href="#para-quem"
           onClick={(e) => onNavClick(e, 'para-quem')}
-          className="text-2xl font-bold text-gray-300 hover:text-[#7ed957] transition-colors"
+          className="text-2xl font-bold text-gray-300 hover:text-green-500 transition-colors"
         >
           Para quem
         </a>
         <a
           href="#quem-somos"
           onClick={(e) => onNavClick(e, 'quem-somos')}
-          className="text-2xl font-bold text-gray-300 hover:text-[#7ed957] transition-colors"
+          className="text-2xl font-bold text-gray-300 hover:text-green-500 transition-colors"
         >
           Quem somos
         </a>
         <a
           href="#depoimentos"
           onClick={(e) => onNavClick(e, 'depoimentos')}
-          className="text-2xl font-bold text-gray-300 hover:text-[#7ed957] transition-colors"
+          className="text-2xl font-bold text-gray-300 hover:text-green-500 transition-colors"
         >
           Soluções
         </a>
         <a
           href="#contato"
           onClick={(e) => onNavClick(e, 'contato')}
-          className="text-2xl font-bold text-gray-300 hover:text-[#7ed957] transition-colors"
+          className="text-2xl font-bold text-gray-300 hover:text-green-500 transition-colors"
         >
           Contato
         </a>
@@ -62,7 +62,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) =>
             href={SOCIAL_LINKS.INSTAGRAM}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-[#7ed957]"
+            className="text-gray-400 hover:text-green-500"
             aria-label="Instagram"
             title="Instagram"
           >
@@ -72,7 +72,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) =>
             href={SOCIAL_LINKS.FACEBOOK}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-[#7ed957]"
+            className="text-gray-400 hover:text-green-500"
             aria-label="Facebook"
             title="Facebook"
           >
@@ -82,7 +82,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) =>
             href={SOCIAL_LINKS.LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-[#7ed957]"
+            className="text-gray-400 hover:text-green-500"
             aria-label="LinkedIn"
             title="LinkedIn"
           >
@@ -92,7 +92,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) =>
             href={SOCIAL_LINKS.YOUTUBE}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-[#7ed957]"
+            className="text-gray-400 hover:text-green-500"
             aria-label="YouTube"
             title="YouTube"
           >
@@ -102,7 +102,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) =>
             href={SOCIAL_LINKS.TIKTOK}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-[#7ed957]"
+            className="text-gray-400 hover:text-green-500"
             aria-label="TikTok"
             title="TikTok"
           >

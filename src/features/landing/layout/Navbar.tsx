@@ -47,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
             />
             <span
-              className={`font-medium text-lg tracking-wide group-hover:text-[#7ed957] transition-colors ${navLogoClass}`}
+              className={`font-medium text-lg tracking-wide group-hover:text-green-600 transition-colors ${navLogoClass}`}
             >
               Growen Idiomas
             </span>

@@ -146,7 +146,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 selection:bg-[#7ed957] selection:text-white overflow-x-hidden font-questrial">
+    <div className="min-h-screen bg-white text-gray-900 selection:bg-green-700 selection:text-white overflow-x-hidden font-questrial">
       <Navbar
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
