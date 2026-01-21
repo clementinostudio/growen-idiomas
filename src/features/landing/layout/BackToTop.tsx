@@ -30,7 +30,7 @@ export const BackToTop: React.FC = () => {
   if (!isScrolled && !forcedVisible) return null;
 
   return (
-    <div className="fixed left-1/2 transform -translate-x-1/2 bottom-6 z-50 flex flex-col items-center gap-3">
+    <div className="fixed left-1/2 transform -translate-x-1/2 bottom-6 z-50 flex flex-row items-center gap-3">
       {/* Botão de Agendar Aula */}
       <button
         type="button"

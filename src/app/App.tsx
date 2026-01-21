@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { useLockBodyScroll, useScrollPosition, useSmoothScroll } from '../hooks';
+import { useLockBodyScroll, useScrollPosition, useSmoothScroll, useScrollDirection } from '../hooks';
 import {
   Navbar,
   MobileMenu,
@@ -68,6 +68,7 @@ const CTASection = lazy(() =>
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const scrolled = useScrollPosition();
+  const scrollDirection = useScrollDirection();
   const { scrollToElement, scrollToTop } = useSmoothScroll();
 
   useLockBodyScroll(isMenuOpen);
@@ -151,6 +152,7 @@ const App: React.FC = () => {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         scrolled={scrolled}
+        scrollDirection={scrollDirection}
         onNavClick={handleNavClick}
         onLogoClick={handleLogoClick}
       />

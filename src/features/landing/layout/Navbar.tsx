@@ -7,6 +7,7 @@ interface NavbarProps {
   isMenuOpen: boolean;
   setIsMenuOpen: (state: boolean) => void;
   scrolled: boolean;
+  scrollDirection: 'up' | 'down';
   onNavClick: (e: React.MouseEvent<HTMLAnchorElement>, id: string) => void;
   onLogoClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
@@ -15,6 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   isMenuOpen,
   setIsMenuOpen,
   scrolled,
+  scrollDirection,
   onNavClick,
   onLogoClick,
 }) => {
@@ -23,9 +25,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navIconClass = 'text-gray-400 hover:text-white';
   const navToggleClass = 'text-white';
 
+  const isHidden = scrolled && scrollDirection === 'down' && !isMenuOpen;
+
   return (
     <nav
-      className={`fixed w-full z-50 transition-colors duration-300 ease-in-out ${
+      className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${
+        isHidden ? '-translate-y-full' : 'translate-y-0'
+      } ${
         isMenuOpen
           ? 'bg-[#050505] py-4'
           : scrolled
