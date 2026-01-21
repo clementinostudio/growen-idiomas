@@ -16,27 +16,29 @@
 }
 
 /* ==========================
-   Hide scrollbar globally
-   Keeps scrolling functional but hides the UI
-   Cross-browser: Firefox, WebKit, IE
+   Custom Scrollbar - Minimalist Black & Thin
    ========================== */
 html, body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #22c55e #000000; /* Firefox: thumb, track */
 }
 
-* {
-  scrollbar-color: transparent transparent; /* Firefox fallback */
-}
-
-/* WebKit browsers */
+/* WebKit browsers (Chrome, Safari, Edge) */
 *::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  background: transparent;
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: transparent;
+  background: #22c55e;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
 }
 
