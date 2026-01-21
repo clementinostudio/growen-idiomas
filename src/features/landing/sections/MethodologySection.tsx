@@ -49,7 +49,7 @@ export const MethodologySection: React.FC = () => {
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-satoshi font-bold text-gray-900 mb-10 tracking-tight leading-tight">
                 Uma metodologia feita para quem quer{' '}
-                <span className="text-green-700">falar inglês</span>,
+                <span className="text-green-400">falar inglês</span>,
                 <br />
                 não decorar regras
               </h2>

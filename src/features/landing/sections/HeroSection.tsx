@@ -186,7 +186,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
                 <div className="mt-4 space-y-1">
                   <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <span className="text-[#15803d] font-bold">
+                    <span className="text-green-400 font-bold">
                       +300 alunos
                     </span>
                     <span>já falando inglês com a Growen</span>
