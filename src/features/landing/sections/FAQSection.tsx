@@ -32,7 +32,7 @@ export const FAQSection: React.FC = () => {
                     <span
                       className={`font-medium text-lg transition-colors duration-300 ${
                         isOpen
-                          ? 'text-green-400'
+                          ? 'text-[#7ed957]'
                           : 'text-gray-200 group-hover:text-white'
                       }`}
                     >

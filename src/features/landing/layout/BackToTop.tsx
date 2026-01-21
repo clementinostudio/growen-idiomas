@@ -35,7 +35,7 @@ export const BackToTop: React.FC = () => {
       <button
         type="button"
         onClick={handleScheduleClick}
-        className="group flex items-center gap-3 pl-5 pr-2 py-2 bg-[#15803d] hover:bg-[#166534] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] shadow-lg"
+        className="group flex items-center gap-3 pl-5 pr-2 py-2 bg-[#7ed957] hover:bg-[#6bc748] text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] shadow-lg"
       >
         <span className="font-satoshi font-bold text-sm tracking-wide whitespace-nowrap">
           Agendar aula experimental

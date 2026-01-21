@@ -26,7 +26,7 @@ export const StepsSection: React.FC = () => {
                 delay={index * 200}
                 className="relative pl-12 md:pl-0 md:pt-12 md:text-center group"
               >
-                <div className="absolute left-0 top-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-gray-200 group-hover:border-[#15803d] transition-colors z-10"></div>
+                <div className="absolute left-0 top-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-gray-200 group-hover:border-[#7ed957] transition-colors z-10"></div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {step.title}
                 </h3>
