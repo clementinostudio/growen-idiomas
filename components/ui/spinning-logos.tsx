@@ -13,20 +13,21 @@ import {
 import { cn } from '@/lib/utils';
 
 export const SpinningLogos: React.FC = () => {
-  const radiusToCenterOfIcons = 180;
-  const iconWrapperWidth = 60;
+  const radiusToCenterOfIcons = 190;
+  const iconWrapperWidth = 85;
   const ringPadding = 40;
 
   const toRadians = (degrees: number): number => (Math.PI / 180) * degrees;
 
   const logos = [
-    { Icon: Code, className: 'bg-purple-600 text-white', name: 'VSCode' },
-    { Icon: Palette, className: 'bg-red-600 text-white', name: 'Adobe' },
-    { Icon: Camera, className: 'bg-orange-600 text-white', name: 'Reddit' },
-    { Icon: Zap, className: 'bg-blue-600 text-white', name: 'Coinbase' },
-    { Icon: Gamepad2, className: 'bg-indigo-600 text-white', name: 'PlayStation' },
-    { Icon: Facebook, className: 'bg-blue-500 text-white', name: 'Facebook' },
-    { Icon: Youtube, className: 'bg-red-500 text-white', name: 'YouTube' },
+    { src: '/amuletos/1.jpeg', alt: 'Gramática e Tradução' },
+    { src: '/amuletos/2.jpeg', alt: 'Método Direto' },
+    { src: '/amuletos/3.jpeg', alt: 'Método Audiolingual' },
+    { src: '/amuletos/4.jpeg', alt: 'Abordagem Comunicativa' },
+    { src: '/amuletos/5.jpeg', alt: 'Método Lexical' },
+    { src: '/amuletos/6.jpeg', alt: 'Abordagem Natural' },
+    { src: '/amuletos/7.jpeg', alt: 'Task-Based Learning' },
+    { src: '/amuletos/8.jpeg', alt: 'Solução Resiliente' },
   ];
 
   return (
@@ -36,7 +37,8 @@ export const SpinningLogos: React.FC = () => {
           width: radiusToCenterOfIcons * 2 + iconWrapperWidth + ringPadding,
           height: radiusToCenterOfIcons * 2 + iconWrapperWidth + ringPadding,
         }}
-        className="relative rounded-full bg-muted/50 shadow-lg border border-border"
+        // Minimalist: removed bg, lighter border, maybe dashed to imply orbit
+        className="relative rounded-full border border-dashed border-gray-200"
       >
         <div className="absolute inset-0 animate-spin-slow">
           {logos.map((logo, index) => {
@@ -51,21 +53,27 @@ export const SpinningLogos: React.FC = () => {
                   height: iconWrapperWidth,
                 }}
                 className={cn(
-                  "absolute flex items-center justify-center rounded-full shadow-md border-2 border-white dark:border-gray-800 animate-spin-reverse",
-                  logo.className
+                  "absolute flex items-center justify-center rounded-full shadow-sm border border-gray-100 animate-spin-reverse overflow-hidden bg-white"
                 )}
-                aria-label={`${logo.name} logo`}
+                aria-label={`${logo.alt} logo`}
               >
-                <logo.Icon className="w-6 h-6" />
+                <img 
+                  src={logo.src} 
+                  alt={logo.alt}
+                  className="w-full h-full object-cover"
+                />
               </div>
             );
           })}
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="bg-background rounded-full w-3/5 h-3/5 flex items-center justify-center shadow-inner border-4 border-border">
-            <span className="text-2xl sm:text-3xl font-bold text-foreground text-center px-4">
-              YOUR LOGO
-            </span>
+          {/* Minimalist Center: Smaller, cleaner, less border/shadow */}
+          <div className="bg-white rounded-full w-40 h-40 flex items-center justify-center shadow-sm border border-gray-100 p-6">
+            <img 
+              src="/arquivos/logoGrowen.svg" 
+              alt="Growen Logo" 
+              className="w-full h-full object-contain"
+            />
           </div>
         </div>
       </div>

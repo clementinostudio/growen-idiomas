@@ -270,29 +270,29 @@ export const STEPS: Step[] = [
 
 export const PAIN_POINTS = [
   {
-    icon: Mic, 
-    title: "Fluência Real",
-    description: "Quer fluência real, não apenas conhecimento teórico."
+    icon: ShieldCheck, 
+    title: "Autoconfiança",
+    description: "Para quem busca a tranquilidade de falar com naturalidade, transformando conhecimento em conversas com postura."
   },
   {
-    icon: UserCheck, 
+    icon: Heart, 
+    title: "Parceria",
+    description: "Para quem procura um professor que seja um parceiro de jornada, focado e comprometido com o seu sucesso."
+  },
+  {
+    icon: UserCheck,
     title: "Ensino Adaptativo",
-    description: "Busca um ensino que se adapte à sua rotina e ao seu jeito de aprender, quem é você como individuo."
+    description: "Para quem quer uma jornada de aprendizado que se molda à sua rotina, ao seu perfil e aos seus objetivos pessoais."
   },
   {
     icon: Users,
     title: "Conexão Humana",
-    description: "Valoriza conexão humana, conversas reais e contextos do dia a dia."
+    description: "Para quem valoriza a troca genuína e entende que a verdadeira comunicação acontece entre pessoas, e com pessoas."
   },
   {
     icon: TrendingUp,
     title: "Crescimento",
-    description: "Quer usar o idioma para crescer pessoal e profissionalmente."
-  },
-  {
-    icon: Heart,
-    title: "Parceria",
-    description: "Busca um professor que seja o seu parceiro de jornada."
+    description: "Para quem vê o Inglês como uma ponte para o futuro, abrindo portas para o seu crescimento pessoal e profissional."
   }
 ];
 
