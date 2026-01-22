@@ -33,8 +33,12 @@ export const Footer: React.FC = () => {
 
           {/* Contato */}
           <div className="flex flex-col space-y-3 text-sm text-gray-400">
-            <div className="flex items-center gap-2">
-              <MapPin size={16} /> R. Estéfano Zshoka
+            <div className="flex items-start gap-2">
+              <MapPin size={16} className="mt-1 min-w-[16px]" /> 
+              <span>
+                R. Estéfano Zshoka<br />
+                Apucarana - PR
+              </span>
             </div>
             <a
               href={SOCIAL_LINKS.WHATSAPP}

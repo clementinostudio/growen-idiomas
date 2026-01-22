@@ -161,7 +161,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
               <Reveal delay={400}>
                 <p className="text-gray-400 text-base md:text-lg max-w-full sm:max-w-lg leading-relaxed font-questrial">
-                  Aprenda inglês falando, errando e evoluindo. Aulas para quem está começando ou quer finalmente destravar a fala.
+                  Aprenda inglês falando, errando e evoluindo. Curso de inglês em <strong>Apucarana</strong> e online para quem está começando ou quer finalmente destravar a fala.
                 </p>
               </Reveal>
 
