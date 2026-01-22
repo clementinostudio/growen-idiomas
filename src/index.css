@@ -1,8 +1,33 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-spin-slow: spin-slow 8s linear infinite;
+  --animate-spin-reverse: spin-reverse 8s linear infinite;
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+}
+
 @theme inline {
   --color-background: var(--bg-dark);
   --color-foreground: #ffffff;
+  --color-muted: #27272a;
+  --color-border: #27272a;
 }
 
 :root {

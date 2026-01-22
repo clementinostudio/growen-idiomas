@@ -8,6 +8,7 @@ import {
   FloatingWhatsApp,
   BackToTop,
 } from '../features/landing/layout';
+import { SectionDivider } from '../features/landing/ui';
 import { HeroSection } from '../features/landing/sections/HeroSection';
 
 declare global {
@@ -165,29 +166,43 @@ const App: React.FC = () => {
         <IdentificationSection />
       </Suspense>
 
+      <SectionDivider />
+
       <Suspense fallback={null}>
         <MethodologySection />
       </Suspense>
+
+      <SectionDivider />
 
       <Suspense fallback={null}>
         <AboutSection onExploreClick={handleCTAClick} />
       </Suspense>
 
+      <SectionDivider />
+
       <Suspense fallback={null}>
         <VisionSection />
       </Suspense>
+
+      <SectionDivider />
 
       <Suspense fallback={null}>
         <StepsSection />
       </Suspense>
 
+      <SectionDivider />
+
       <Suspense fallback={null}>
         <TestimonialsSection />
       </Suspense>
 
+      <SectionDivider />
+
       <Suspense fallback={null}>
         <FAQSection />
       </Suspense>
+
+      <SectionDivider />
 
       <Suspense fallback={null}>
         <CTASection onCTAClick={handleCTAClick} />

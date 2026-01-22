@@ -1,40 +1,8 @@
 import React from 'react';
-import {
-  SlidersHorizontal,
-  Zap,
-  Target,
-  MessageSquare,
-} from 'lucide-react';
 import { Reveal } from '../ui';
+import { SpinningLogos } from '@/components/ui/spinning-logos';
 
 export const MethodologySection: React.FC = () => {
-  const pillars = [
-    {
-      icon: SlidersHorizontal,
-      title: 'Flexibilidade Total',
-      description:
-        'As aulas se adaptam à sua rotina, nível e objetivos — nunca o contrário.',
-    },
-    {
-      icon: Zap,
-      title: 'Evolução Acelerada',
-      description:
-        'Você avança de forma natural, sem travar e sem perder tempo com o que não usa.',
-    },
-    {
-      icon: Target,
-      title: 'Conteúdo que Faz Sentido',
-      description:
-        'Nada de inglês genérico. Você aprende o que realmente usa no dia a dia.',
-    },
-    {
-      icon: MessageSquare,
-      title: 'Conversação de Verdade',
-      description:
-        'Desde o início, o foco é falar, errar, corrigir e ganhar confiança.',
-    },
-  ];
-
   return (
     <section
       id="solucoes"
@@ -78,35 +46,11 @@ export const MethodologySection: React.FC = () => {
 
           {/* RIGHT: PILLARS */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="flex flex-col">
-              {pillars.map((pillar, index) => (
-                <Reveal
-                  key={index}
-                  delay={300 + index * 100}
-                  className="group border-t border-gray-100 py-8 flex gap-6 transition-all duration-300 hover:pl-4"
-                >
-                  {/* Icon */}
-                  <div className="shrink-0 pt-1">
-                    <pillar.icon
-                      className="w-6 h-6 text-[#15803d]"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-
-                  {/* Text */}
-                  <div>
-                    <h3 className="font-satoshi font-semibold text-gray-900 text-lg mb-1">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-gray-500 leading-relaxed text-base max-w-xl">
-                      {pillar.description}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-
-              <div className="border-t border-gray-100" />
-            </div>
+            <Reveal delay={300}>
+              <div className="scale-75 md:scale-90 origin-center">
+                <SpinningLogos />
+              </div>
+            </Reveal>
           </div>
 
         </div>

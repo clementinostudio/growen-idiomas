@@ -5,3 +5,5 @@ export { WhatsAppIcon } from './WhatsAppIcon';
 export { SectionTitle } from './SectionTitle';
 export { ButtonPrimary } from './ButtonPrimary';
 export { TikTokIcon } from './TikTokIcon';
+export { SectionDivider } from './SectionDivider';
+
