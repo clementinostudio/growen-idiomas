@@ -60,7 +60,7 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-black isolate">
+    <section className="relative min-h-svh flex items-center overflow-hidden bg-black isolate">
       {/* Background with Forced Green Tint */}
       <div className="absolute inset-0 z-0 bg-black">
         {/* 1. Base Image - High Constast Grayscale */}
@@ -76,7 +76,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
         <div className="absolute inset-0 bg-green-500/30 mix-blend-color-dodge" />
 
         {/* 4. Vignette / Fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black" />
       </div>
       
       {/* Texture Overlay (Ring) */}
@@ -84,8 +84,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
       {/* BACKGROUND OVERLAYS */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-black/10" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent" />
       </div>
 
 
@@ -95,9 +95,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
       
       <div className="absolute -bottom-28 -left-28 z-10 pointer-events-none select-none">
         <img
-          src="/arquivos/logoGrowen.svg"
+          src="/arquivos/logo.webp"
           alt=""
-          className="w-[360px] opacity-10"
+          className="w-90 opacity-10"
           width="360"
           height="100"
           fetchPriority="high"
@@ -107,9 +107,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
 
       <div className="absolute -top-24 -right-28 z-10 pointer-events-none select-none hidden lg:block">
         <img
-          src="/arquivos/logoGrowen.svg"
+          src="/arquivos/logo.webp"
           alt=""
-          className="w-[415px] opacity-10"
+          className="w-103.75 opacity-10"
           loading="lazy"
           width="415"
           height="100"
@@ -134,7 +134,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
           {/* CONTEÚDO ESQUERDO */}
           <div className="relative flex flex-col items-start text-left px-2 sm:px-0">
             <div
-              className="hidden sm:block absolute -bottom-40 -left-8 w-[640px] h-[640px] bg-cover bg-center bg-no-repeat opacity-30 pointer-events-none z-0 rounded-md"
+              className="hidden sm:block absolute -bottom-40 -left-8 w-160 h-160 bg-cover bg-center bg-no-repeat opacity-30 pointer-events-none z-0 rounded-md"
               style={{ backgroundImage: "url('/arquivos/fundo.webp')" }}
             />
 
@@ -211,9 +211,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
               className="relative z-20 w-full flex justify-center lg:justify-end"
             >
               <img
-                src="/arquivos/MelvinM.svg"
+                src="/arquivos/MelvinM.webp"
                 alt="Mascote Growen"
-                className="w-full max-w-[650px] object-contain drop-shadow-2xl"
+                className="w-full max-w-162.5 object-contain drop-shadow-2xl"
                 fetchPriority="high"
                 width="650"
                 height="800"

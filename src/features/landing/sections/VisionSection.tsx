@@ -30,7 +30,7 @@ export const VisionSection: React.FC = () => {
     <section className="relative overflow-hidden bg-[#050505] py-24 sm:py-28 md:py-32 text-white">
       {/* BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-green-900/25 via-black to-black opacity-60" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-green-900/25 via-black to-black opacity-60" />
       </div>
 
       {/* CONTAINER COM MAIS ESPAÇO LATERAL NO MOBILE */}
@@ -99,7 +99,7 @@ export const VisionSection: React.FC = () => {
               <img
                 src="/arquivos/preguizioportal.svg"
                 alt="Mascote Growen"
-                className="relative w-full max-w-[480px] object-contain"
+                className="relative w-full max-w-120 object-contain"
                 width="480"
                 height="600"
                 loading="lazy"

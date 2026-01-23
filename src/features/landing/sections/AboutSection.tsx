@@ -67,7 +67,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ item, delay, onOpen, index })
         />
 
         {/* Gradient overlay (animated) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
         {/* Hint */}
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full text-black opacity-100 group-hover:opacity-0 transition-all duration-400 transform-gpu group-hover:-translate-y-1">
@@ -246,7 +246,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
                 src="/arquivos/MelvinMesa.svg"
                 alt="Mascote Growen"
                 onClick={onExploreClick}
-                className="w-full max-h-[420px] object-contain cursor-pointer hover:scale-[1.02] transition-transform"
+                className="w-full max-h-105 object-contain cursor-pointer hover:scale-[1.02] transition-transform"
                 width="600"
                 height="420"
                 loading="lazy"

@@ -20,14 +20,14 @@ export const SpinningLogos: React.FC = () => {
   const toRadians = (degrees: number): number => (Math.PI / 180) * degrees;
 
   const logos = [
-    { src: '/amuletos/1.jpeg', alt: 'Gramática e Tradução' },
-    { src: '/amuletos/2.jpeg', alt: 'Método Direto' },
-    { src: '/amuletos/3.jpeg', alt: 'Método Audiolingual' },
-    { src: '/amuletos/4.jpeg', alt: 'Abordagem Comunicativa' },
-    { src: '/amuletos/5.jpeg', alt: 'Método Lexical' },
-    { src: '/amuletos/6.jpeg', alt: 'Abordagem Natural' },
-    { src: '/amuletos/7.jpeg', alt: 'Task-Based Learning' },
-    { src: '/amuletos/8.jpeg', alt: 'Solução Resiliente' },
+    { src: '/amuletos/amuleto1.webp', alt: 'Amuleto 1' },
+    { src: '/amuletos/amuleto2.webp', alt: 'Amuleto 2' },
+    { src: '/amuletos/amuleto3.webp', alt: 'Amuleto 3' },
+    { src: '/amuletos/amuleto4.webp', alt: 'Amuleto 4' },
+    { src: '/amuletos/amuleto5.webp', alt: 'Amuleto 5' },
+    { src: '/amuletos/amuleto6.webp', alt: 'Amuleto 6' },
+    { src: '/amuletos/amuleto7.webp', alt: 'Amuleto 7' },
+    { src: '/amuletos/amuleto8.webp', alt: 'Amuleto 8' },
   ];
 
   return (

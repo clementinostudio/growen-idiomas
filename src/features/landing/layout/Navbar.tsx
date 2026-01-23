@@ -1,6 +1,5 @@
 import React from 'react';
-import { Menu, X, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
-import { TikTokIcon } from '../ui/TikTokIcon';
+import { Menu, X, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { SOCIAL_LINKS } from '../../../constants';
 
 interface NavbarProps {
@@ -25,21 +24,20 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navIconClass = 'text-gray-400 hover:text-white';
   const navToggleClass = 'text-white';
 
-  const isHidden = scrolled && scrollDirection === 'down' && !isMenuOpen;
+  // Optei por remover a lógica de esconder a navbar (isHidden) para um visual mais estável e profissional.
+  // A navbar agora ficará fixa no topo (sticky/fixed) sem sumir ao rolar para baixo.
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${
-        isHidden ? '-translate-y-full' : 'translate-y-0'
-      } ${
+      className={`fixed w-full z-50 transition-all duration-300 ease-in-out transform-gpu ${
         isMenuOpen
-          ? 'bg-[#050505] py-4'
+          ? 'bg-black'
           : scrolled
-            ? 'bg-[#050505]/95 backdrop-blur-md border-b border-white/5 py-4 shadow-sm shadow-black/50'
-            : 'bg-transparent border-transparent py-6'
+            ? 'bg-black border-b border-white/5 py-3'
+            : 'bg-transparent border-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-50">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <a
@@ -92,52 +90,34 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Right Social Icons */}
-          <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-6">
+            <div className="flex items-center gap-5 border-l border-white/10 pl-6 h-8">
               <a
                 href={SOCIAL_LINKS.FACEBOOK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${navIconClass}`}
+                className={`transition-colors ${navIconClass} hover:text-[#1877F2] hover:scale-110 transform duration-200`}
                 aria-label="Facebook"
               >
-                <Facebook size={20} strokeWidth={1.5} />
+                <Facebook size={18} strokeWidth={1.5} />
               </a>
               <a
                 href={SOCIAL_LINKS.INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${navIconClass}`}
+                className={`transition-colors ${navIconClass} hover:text-[#E4405F] hover:scale-110 transform duration-200`}
                 aria-label="Instagram"
               >
-                <Instagram size={20} strokeWidth={1.5} />
+                <Instagram size={18} strokeWidth={1.5} />
               </a>
               <a
                 href={SOCIAL_LINKS.LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${navIconClass}`}
+                className={`transition-colors ${navIconClass} hover:text-[#0A66C2] hover:scale-110 transform duration-200`}
                 aria-label="LinkedIn"
               >
-                <Linkedin size={20} strokeWidth={1.5} />
-              </a>
-              <a
-                href={SOCIAL_LINKS.YOUTUBE}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`transition-colors ${navIconClass}`}
-                aria-label="YouTube"
-              >
-                <Youtube size={20} strokeWidth={1.5} />
-              </a>
-              <a
-                href={SOCIAL_LINKS.TIKTOK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`transition-colors ${navIconClass}`}
-                aria-label="TikTok"
-              >
-                <TikTokIcon className="w-5 h-5" />
+                <Linkedin size={18} strokeWidth={1.5} />
               </a>
             </div>
           </div>
