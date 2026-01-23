@@ -66,7 +66,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
         {/* 1. Base Image - High Constast Grayscale */}
         <img
             src="/arquivos/space-bg.jpg"
-            alt=""
+            alt="Fundo abstrato do espaço com efeito verde"
             className="w-full h-full object-cover opacity-70 grayscale contrast-150"
         />
         {/* 2. Colorizer Layer - Maps White to Green */}
@@ -96,7 +96,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
       <div className="absolute -bottom-28 -left-28 z-10 pointer-events-none select-none">
         <img
           src="/arquivos/logo.webp"
-          alt=""
+          alt="Logo decorativa Growen"
           className="w-90 opacity-10"
           width="360"
           height="100"
@@ -108,7 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
       <div className="absolute -top-24 -right-28 z-10 pointer-events-none select-none hidden lg:block">
         <img
           src="/arquivos/logo.webp"
-          alt=""
+          alt="Logo decorativa Growen"
           className="w-103.75 opacity-10"
           loading="lazy"
           width="415"
@@ -170,9 +170,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                   onClick={() =>
                     window.open(
                       'https://wa.me/5543996536535?text=Olá!%20😊%0AGostaria%20de%20agendar%20uma%20aula%20teste%20gratuita%20de%20inglês.%20Poderia%20me%20passar%20mais%20informações?',
-                      '_blank'
+                      '_blank',
+                      'noopener,noreferrer'
                     )
                   }
+                  aria-label="Agendar aula experimental gratuita pelo WhatsApp"
                   className="group relative flex items-center gap-4 pl-6 pr-2 py-2 bg-green-500 hover:bg-green-600 text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
                 >
                   <span className="font-satoshi font-bold text-lg tracking-wide">

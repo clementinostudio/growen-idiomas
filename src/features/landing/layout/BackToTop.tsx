@@ -23,7 +23,8 @@ export const BackToTop: React.FC = () => {
   const handleScheduleClick = () => {
     window.open(
       'https://wa.me/5543996536535?text=Olá!%20😊%0AGostaria%20de%20agendar%20uma%20aula%20teste%20gratuita%20de%20inglês.%20Poderia%20me%20passar%20mais%20informações?',
-      '_blank'
+      '_blank',
+      'noopener,noreferrer'
     );
   };
 
@@ -35,6 +36,7 @@ export const BackToTop: React.FC = () => {
       <button
         type="button"
         onClick={handleScheduleClick}
+        aria-label="Agendar aula experimental pelo WhatsApp"
         className="group flex items-center gap-3 pl-5 pr-2 py-2 bg-green-500 hover:bg-green-600 text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] shadow-lg"
       >
         <span className="font-satoshi font-bold text-sm tracking-wide whitespace-nowrap">

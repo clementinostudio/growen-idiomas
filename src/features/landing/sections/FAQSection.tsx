@@ -28,6 +28,8 @@ export const FAQSection: React.FC = () => {
                   <button
                     onClick={() => toggleFaq(index)}
                     className="w-full flex items-center justify-between py-6 text-left group"
+                    aria-expanded={isOpen}
+                    aria-label={`${isOpen ? 'Fechar' : 'Abrir'} pergunta: ${faq.question}`}
                   >
                     <span
                       className={`font-medium text-lg transition-colors duration-300 ${

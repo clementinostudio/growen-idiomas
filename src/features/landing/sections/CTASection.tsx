@@ -26,6 +26,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onCTAClick }) => {
           <Reveal delay={400}>
             <button
               onClick={onCTAClick}
+              aria-label="Agendar aula experimental"
               className="bg-black text-white hover:bg-gray-900 font-bold py-4 px-12 rounded-full text-lg transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl shadow-black/20"
             >
               Agendar Aula Experimental
