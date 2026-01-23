@@ -14,13 +14,36 @@ export default defineConfig(({ mode }) => {
         react(),
         tailwindcss(),
       ],
-        publicDir: 'public',
+      publicDir: 'public',
       define: {
       },
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
-      }
+      },
+      build: {
+        // Optimize chunk splitting to reduce dependency chains
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              // Vendor chunk - React and core dependencies
+              'vendor': ['react', 'react-dom'],
+              // Motion library - heavy, load separately
+              'motion': ['motion/react'],
+              // UI utilities
+              'ui': ['lucide-react'],
+            },
+          },
+        },
+        // Improve chunk size warnings
+        chunkSizeWarningLimit: 500,
+        // Enable minification
+        minify: 'esbuild',
+        // Target modern browsers for smaller bundles
+        target: 'es2020',
+        // Enable CSS code splitting
+        cssCodeSplit: true,
+      },
     };
 });

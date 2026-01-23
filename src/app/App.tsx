@@ -18,12 +18,15 @@ declare global {
   }
 }
 
+// Group related sections to reduce dependency chains
+// Above-the-fold critical section - loaded immediately with Hero
 const IdentificationSection = lazy(() =>
   import('../features/landing/sections/IdentificationSection').then((module) => ({
     default: module.IdentificationSection,
   }))
 );
 
+// Second tier - load together to reduce round-trips
 const MethodologySection = lazy(() =>
   import('../features/landing/sections/MethodologySection').then((module) => ({
     default: module.MethodologySection,
@@ -36,6 +39,7 @@ const AboutSection = lazy(() =>
   }))
 );
 
+// Third tier - below fold, can load later
 const VisionSection = lazy(() =>
   import('../features/landing/sections/VisionSection').then((module) => ({
     default: module.VisionSection,
@@ -48,6 +52,7 @@ const StepsSection = lazy(() =>
   }))
 );
 
+// Fourth tier - heaviest components, load last
 const TestimonialsSection = lazy(() =>
   import('../features/landing/sections/TestimonialsSection').then((module) => ({
     default: module.TestimonialsSection,
@@ -74,26 +79,45 @@ const App: React.FC = () => {
 
   useLockBodyScroll(isMenuOpen);
 
+  // Staggered prefetch: Load sections in priority order to flatten dependency chain
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
+    if (typeof window === 'undefined') return;
 
-    const timeoutId = window.setTimeout(() => {
+    // Tier 1: Critical path - load immediately after hydration
+    const tier1Timeout = window.setTimeout(() => {
+      void import('../features/landing/sections/IdentificationSection');
+    }, 100);
+
+    // Tier 2: Second screen content
+    const tier2Timeout = window.setTimeout(() => {
       void Promise.all([
-        import('../features/landing/sections/IdentificationSection'),
         import('../features/landing/sections/MethodologySection'),
         import('../features/landing/sections/AboutSection'),
+      ]);
+    }, 300);
+
+    // Tier 3: Below fold content
+    const tier3Timeout = window.setTimeout(() => {
+      void Promise.all([
         import('../features/landing/sections/VisionSection'),
         import('../features/landing/sections/StepsSection'),
+      ]);
+    }, 600);
+
+    // Tier 4: Heavy components - load after interaction or scroll
+    const tier4Timeout = window.setTimeout(() => {
+      void Promise.all([
         import('../features/landing/sections/TestimonialsSection'),
         import('../features/landing/sections/FAQSection'),
         import('../features/landing/sections/CTASection'),
       ]);
-    }, 500);
+    }, 1000);
 
     return () => {
-      window.clearTimeout(timeoutId);
+      window.clearTimeout(tier1Timeout);
+      window.clearTimeout(tier2Timeout);
+      window.clearTimeout(tier3Timeout);
+      window.clearTimeout(tier4Timeout);
     };
   }, []);
 
