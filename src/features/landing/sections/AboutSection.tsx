@@ -22,7 +22,7 @@ const GALLERY: GalleryItem[] = [
   {
     src: '/arquivos/sala.webp',
     label: 'Sala de Aula',
-    aspect: 'aspect-[16/10]',
+    aspect: 'aspect-[4/3]',
   },
   {
     src: '/arquivos/recep.webp',
@@ -55,7 +55,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ item, delay, onOpen, index })
         aria-label={`Abrir imagem: ${item.label}`}
         onClick={() => onOpen(index)}
         onKeyDown={(e) => e.key === 'Enter' && onOpen(index)}
-        className={`relative group rounded-3xl overflow-hidden shadow-sm cursor-pointer ${item.aspect} focus:outline-none focus:ring-4 focus:ring-[#15803d]/30 transform-gpu transition-transform duration-500 will-change-transform hover:scale-105 hover:-translate-y-1 hover:shadow-2xl focus:scale-105`}
+        className={`relative group rounded-3xl overflow-hidden shadow-sm cursor-pointer ${item.aspect} focus:outline-none focus:ring-4 focus:ring-[#15803d]/20 transform-gpu transition-transform duration-500 will-change-transform hover:scale-[1.015] hover:-translate-y-1 hover:shadow-lg focus:scale-[1.015] bg-white ring-1 ring-black/5`}
       >
         {/* Image */}
         <img
@@ -70,19 +70,14 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ item, delay, onOpen, index })
         <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
         {/* Hint */}
-        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full text-black opacity-100 group-hover:opacity-0 transition-all duration-400 transform-gpu group-hover:-translate-y-1">
-          <span className="hidden sm:inline">Clique para ampliar</span>
-          <span className="sm:hidden">Toque para ampliar</span>
-        </div>
-
         {/* Expand icon */}
         <div className="absolute top-4 right-4 bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-transform duration-300 transform-gpu group-hover:scale-110">
           <ArrowUpRight className="w-4 h-4" />
         </div>
 
         {/* Label */}
-        <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0">
-          <span className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-black">
+        <div className="absolute bottom-6 left-6 opacity-100 transition-all duration-500 translate-y-0">
+          <span className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-black shadow-sm">
             {item.label}
           </span>
         </div>
@@ -268,14 +263,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
         {/* =====================
             Bento Gallery
         ===================== */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-8">
-            <GalleryCard item={GALLERY[0]} delay={200} onOpen={openImage} index={0} />
-          </div>
+        <div className="rounded-3xl bg-gray-50 border border-gray-100 p-6 md:p-8 shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <div className="md:col-span-7 lg:col-span-8">
+              <GalleryCard item={GALLERY[0]} delay={200} onOpen={openImage} index={0} />
+            </div>
 
-          <div className="md:col-span-4 grid grid-rows-2 gap-6">
-            <GalleryCard item={GALLERY[1]} delay={300} onOpen={openImage} index={1} />
-            <GalleryCard item={GALLERY[2]} delay={400} onOpen={openImage} index={2} />
+            <div className="md:col-span-5 lg:col-span-4 grid grid-rows-2 gap-6">
+              <GalleryCard item={GALLERY[1]} delay={300} onOpen={openImage} index={1} />
+              <GalleryCard item={GALLERY[2]} delay={400} onOpen={openImage} index={2} />
+            </div>
           </div>
         </div>
       </div>
