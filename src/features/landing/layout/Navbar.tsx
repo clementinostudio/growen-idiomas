@@ -29,20 +29,20 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav
-      className={`absolute w-full z-50 transition-all duration-300 ease-in-out py-5`}
+      className={`absolute w-full z-50 transition-all duration-300 ease-in-out pt-8 pb-5`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-50">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 md:px-12 lg:px-16 relative z-50">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <a
             href="#"
             onClick={onLogoClick}
-            className="flex items-center gap-3 group cursor-pointer"
+            className="flex items-center gap-2.5 group cursor-pointer"
           >
             <img
               src="/arquivos/logoGrowen.svg"
               alt="Growen Idiomas Logo"
-              className="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
+              className="w-6 h-6 object-contain transition-transform duration-300 group-hover:scale-110"
             />
             <span
               className={`font-medium text-lg tracking-wide group-hover:text-green-400 transition-colors ${navLogoClass}`}
@@ -51,40 +51,38 @@ export const Navbar: React.FC<NavbarProps> = ({
             </span>
           </a>
 
-          {/* Center Links */}
+          {/* Center Links + Right Social Icons */}
           <div className="hidden md:flex items-center gap-8">
             <a
               href="#para-quem"
               onClick={(e) => onNavClick(e, 'para-quem')}
-              className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}
+              className={`transition-colors text-base font-interTight font-medium tracking-wide ${navTextClass}`}
             >
               Para quem
             </a>
             <a
               href="#quem-somos"
               onClick={(e) => onNavClick(e, 'quem-somos')}
-              className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}
+              className={`transition-colors text-base font-interTight font-medium tracking-wide ${navTextClass}`}
             >
               Quem somos
             </a>
             <a
               href="#depoimentos"
               onClick={(e) => onNavClick(e, 'depoimentos')}
-              className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}
+              className={`transition-colors text-base font-interTight font-medium tracking-wide ${navTextClass}`}
             >
               Alunos
             </a>
             <a
               href="#contato"
               onClick={(e) => onNavClick(e, 'contato')}
-              className={`transition-colors text-sm font-medium tracking-wide ${navTextClass}`}
+              className={`transition-colors text-base font-interTight font-medium tracking-wide ${navTextClass}`}
             >
               Contato
             </a>
-          </div>
 
-          {/* Right Social Icons */}
-          <div className="hidden md:flex items-center gap-6">
+            {/* Social Icons */}
             <div className="flex items-center gap-5 border-l border-gray-200 pl-6 h-8">
               <a
                 href={SOCIAL_LINKS.FACEBOOK}

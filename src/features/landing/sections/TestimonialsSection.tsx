@@ -69,7 +69,7 @@ export const TestimonialsSection: React.FC = () => {
         {/* Trust indicator */}
         <Reveal>
           <div className="mt-12 flex flex-col items-center">
-            <p className="text-gray-500 text-sm mb-4">Junte-se a centenas de alunos satisfeitos</p>
+            <p className="text-[#4C5267] font-interTight text-sm font-medium mb-4">Junte-se a centenas de alunos satisfeitos</p>
             <div className="flex -space-x-3">
               {TESTIMONIALS.slice(0, 6).map((t, i) => (
                 <img 

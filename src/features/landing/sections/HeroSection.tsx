@@ -79,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                       text="Pare de estudar inglês."
                       speed={2}
                       delay={0}
-                      color="#16a34a"
+                      color="#22c55e"
                       shineColor="#ffffff"
                       spread={120}
                       direction="left"
@@ -93,8 +93,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
               </Reveal>
 
               <Reveal delay={400}>
-                <p className="text-gray-500 text-lg md:text-xl max-w-full sm:max-w-lg leading-relaxed">
-                  Aprenda inglês falando, errando e evoluindo. Curso de inglês em <span className="text-gray-700 font-medium">Apucarana</span> e online para quem está começando ou quer finalmente destravar a fala.
+                <p className="text-[#4C5267] font-interTight text-lg md:text-xl font-medium max-w-full sm:max-w-lg leading-relaxed">
+                  Aprenda inglês falando, errando e evoluindo. Curso de inglês em <span className="text-[#204749] font-semibold">Apucarana</span> e online para quem está começando ou quer finalmente destravar a fala.
                 </p>
               </Reveal>
 

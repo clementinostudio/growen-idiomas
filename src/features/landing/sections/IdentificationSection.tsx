@@ -44,7 +44,7 @@ export const IdentificationSection: React.FC = () => {
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">
                         {point.title}
                       </h3>
-                      <p className="text-gray-500 leading-relaxed">
+                      <p className="text-[#4C5267] font-interTight font-medium leading-relaxed">
                         {point.description}
                       </p>
                     </div>

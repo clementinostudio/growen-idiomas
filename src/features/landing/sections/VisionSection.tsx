@@ -74,7 +74,7 @@ export const VisionSection: React.FC = () => {
                     <h4 className="font-bold text-white mb-1">
                       {item.title}
                     </h4>
-                    <p className="text-gray-500 text-sm leading-relaxed">
+                    <p className="text-[#9ca3af] font-interTight text-sm font-medium leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -84,7 +84,7 @@ export const VisionSection: React.FC = () => {
 
             {/* BRIDGE TO CTA */}
             <Reveal delay={900}>
-              <p className="mt-10 text-sm sm:text-base text-gray-500">
+              <p className="mt-10 text-sm sm:text-base text-[#9ca3af] font-interTight font-medium">
                 E tudo começa com a sua primeira conversa.
               </p>
             </Reveal>

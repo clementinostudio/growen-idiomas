@@ -19,7 +19,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onCTAClick }) => {
             </h2>
           </Reveal>
           <Reveal delay={200}>
-            <p className="text-green-100 text-xl mb-12">
+            <p className="text-green-100 font-interTight text-xl font-medium mb-12">
               Sem matrículas caras, sem contratos abusivos. Apenas inglês real.
             </p>
           </Reveal>

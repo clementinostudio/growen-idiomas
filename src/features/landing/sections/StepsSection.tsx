@@ -30,7 +30,7 @@ export const StepsSection: React.FC = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">
+                <p className="text-sm text-[#4C5267] font-interTight font-medium leading-relaxed">
                   {step.description}
                 </p>
               </Reveal>

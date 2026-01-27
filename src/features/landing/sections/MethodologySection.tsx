@@ -24,12 +24,12 @@ export const MethodologySection: React.FC = () => {
             </Reveal>
 
             <Reveal delay={200} className="space-y-8">
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-[#4C5267] font-interTight font-medium leading-relaxed">
                 Aqui, você não segue um método engessado. Antes de ensinar,
                 entendemos você: seu nível, seus objetivos e sua rotina.
               </p>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-[#4C5267] font-interTight font-medium leading-relaxed">
                 A partir disso, combinamos estratégias e técnicas que realmente
                 funcionam para o seu perfil. O resultado é simples e direto:
               </p>

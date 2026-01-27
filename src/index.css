@@ -41,30 +41,30 @@
 }
 
 /* ==========================
-   Custom Scrollbar - Minimalist Black & Thin
+   Custom Scrollbar - Minimalist White & Thin
    ========================== */
 html, body {
   scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #22c55e #000000; /* Firefox: thumb, track */
+  scrollbar-color: rgba(200, 200, 200, 0.4) transparent; /* Firefox: thumb, track */
 }
 
 /* WebKit browsers (Chrome, Safari, Edge) */
 *::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #000000;
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #22c55e;
-  border-radius: 3px;
+  background: rgba(200, 200, 200, 0.4);
+  border-radius: 10px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #16a34a;
+  background: rgba(200, 200, 200, 0.6);
 }
 
 /* ==========================
