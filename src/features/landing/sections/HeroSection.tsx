@@ -184,10 +184,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
               <img
                 src="/arquivos/MelvinM.webp"
                 alt="Mascote Growen"
-                className="w-full max-w-[500px] object-contain"
+                className="w-full max-w-[300px] object-contain"
                 fetchPriority="high"
-                width="650"
-                height="800"
+                width="520"
+                height="640"
               />
             </Reveal>
           </div>

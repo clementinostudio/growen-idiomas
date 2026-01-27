@@ -241,9 +241,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
                 src="/arquivos/Zara.svg"
                 alt="Mascote Growen"
                 onClick={onExploreClick}
-                className="w-full max-h-105 object-contain cursor-pointer hover:scale-[1.02] transition-transform"
+                className="w-full max-h-[32rem] object-contain cursor-pointer hover:scale-[1.02] transition-transform"
                 width="600"
-                height="420"
+                height="512"
                 loading="lazy"
               />
             </Reveal>

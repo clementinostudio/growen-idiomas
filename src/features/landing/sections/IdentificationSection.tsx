@@ -56,7 +56,7 @@ export const IdentificationSection: React.FC = () => {
 
           {/* RIGHT: IMAGE */}
           <Reveal delay={300} className="relative w-full flex justify-center lg:justify-end px-6 sm:px-4">
-            <div className="relative w-full max-w-[90vw] sm:max-w-[620px]">
+            <div className="relative w-full max-w-[60vw] sm:max-w-[380px]">
 
               <img
                 src="/arquivos/Melvinquem.svg"
