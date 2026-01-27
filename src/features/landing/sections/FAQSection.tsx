@@ -15,7 +15,7 @@ export const FAQSection: React.FC = () => {
       {/* CONTAINER COM MESMO ESPAÇO LATERAL DO MOBILE */}
       <div className="max-w-2xl mx-auto px-12 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-bold mb-12 text-left text-white font-satoshi">
+          <h2 className="text-3xl font-fustat font-semibold mb-12 text-left text-white tracking-tight">
             Dúvidas Frequentes
           </h2>
         </Reveal>

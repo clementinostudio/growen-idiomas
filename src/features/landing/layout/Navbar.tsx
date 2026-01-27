@@ -19,23 +19,17 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavClick,
   onLogoClick,
 }) => {
-  const navTextClass = 'text-gray-300 hover:text-white';
-  const navLogoClass = 'text-white';
-  const navIconClass = 'text-gray-400 hover:text-white';
-  const navToggleClass = 'text-white';
+  const navTextClass = 'text-gray-600 hover:text-gray-900';
+  const navLogoClass = 'text-gray-900';
+  const navIconClass = 'text-gray-500 hover:text-gray-900';
+  const navToggleClass = 'text-gray-900';
 
   // Optei por remover a lógica de esconder a navbar (isHidden) para um visual mais estável e profissional.
   // A navbar agora ficará fixa no topo (sticky/fixed) sem sumir ao rolar para baixo.
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ease-in-out transform-gpu ${
-        isMenuOpen
-          ? 'bg-black'
-          : scrolled
-            ? 'bg-black border-b border-white/5 py-3'
-            : 'bg-transparent border-transparent py-5'
-      }`}
+      className={`absolute w-full z-50 transition-all duration-300 ease-in-out py-5`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-50">
         <div className="flex justify-between items-center">
@@ -91,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right Social Icons */}
           <div className="hidden md:flex items-center gap-6">
-            <div className="flex items-center gap-5 border-l border-white/10 pl-6 h-8">
+            <div className="flex items-center gap-5 border-l border-gray-200 pl-6 h-8">
               <a
                 href={SOCIAL_LINKS.FACEBOOK}
                 target="_blank"
@@ -130,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
-              className={`${navToggleClass} p-2 hover:bg-white/10 rounded-full transition-colors`}
+              className={`${navToggleClass} p-2 hover:bg-gray-100 rounded-full transition-colors`}
             >
               {isMenuOpen ? <X size={24} aria-hidden={true} /> : <Menu size={24} aria-hidden={true} />}
             </button>

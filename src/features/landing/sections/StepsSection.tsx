@@ -9,7 +9,7 @@ export const StepsSection: React.FC = () => {
       <div className="max-w-5xl mx-auto px-12 sm:px-6 lg:px-8">
         <Reveal>
           <div className="flex items-center justify-center gap-4 mb-16">
-            <h2 className="text-2xl font-bold text-center text-gray-900 font-satoshi">
+            <h2 className="text-2xl font-fustat font-semibold text-center text-[#204749] tracking-tight">
               Sua jornada simplificada
             </h2>
           </div>

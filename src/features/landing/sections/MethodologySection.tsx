@@ -15,9 +15,9 @@ export const MethodologySection: React.FC = () => {
           {/* LEFT: PHILOSOPHY */}
           <div className="lg:col-span-5">
             <Reveal>
-              <h2 className="text-4xl md:text-5xl font-satoshi font-bold text-gray-900 mb-10 tracking-tight leading-tight">
+              <h2 className="text-4xl md:text-5xl font-fustat font-semibold text-[#204749] mb-10 tracking-tight leading-tight">
                 Uma metodologia feita para quem quer{' '}
-                <span className="text-green-400">falar inglês</span>,
+                <span className="text-green-500">falar inglês</span>,
                 <br />
                 não decorar regras
               </h2>

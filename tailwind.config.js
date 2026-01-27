@@ -9,6 +9,10 @@ export default {
       fontFamily: {
         sans: ['Questrial', 'sans-serif'],
         satoshi: ['Satoshi', 'sans-serif'],
+        fustat: ['Fustat', 'sans-serif'],
+      },
+      colors: {
+        'deep-teal': '#204749',
       },
     },
   },

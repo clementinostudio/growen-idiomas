@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
+import { TESTIMONIALS } from '../../../constants';
+import ShinyText from '../../../components/ui/ShinyText';
 
 /* =========================================================
  * COMPONENTE: Reveal
@@ -60,151 +62,118 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
   return (
-    <section className="relative min-h-svh flex items-center overflow-hidden bg-black isolate">
-      {/* Background with Forced Green Tint */}
-      <div className="absolute inset-0 z-0 bg-black">
-        {/* 1. Base Image - High Constast Grayscale */}
-        <img
-            src="/arquivos/space-bg.jpg"
-            alt="Fundo abstrato do espaço com efeito verde"
-            className="w-full h-full object-cover opacity-70 grayscale contrast-150"
-        />
-        {/* 2. Colorizer Layer - Maps White to Green */}
-        <div className="absolute inset-0 bg-green-600 mix-blend-overlay opacity-100" />
-        
-        {/* 3. Extra Glow for highlights */}
-        <div className="absolute inset-0 bg-green-500/30 mix-blend-color-dodge" />
-
-        {/* 4. Vignette / Fade */}
-        <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black" />
-      </div>
-      
-      {/* Texture Overlay (Ring) */}
-      <div className="pointer-events-none absolute inset-0 ring-1 ring-white/10" />
-
-      {/* BACKGROUND OVERLAYS */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-black/10" />
-        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent" />
-      </div>
-
-
-
-      {/* LOGOS DECORATIVAS */}
-
-      
-      <div className="absolute -bottom-28 -left-28 z-10 pointer-events-none select-none">
-        <img
-          src="/arquivos/logo.webp"
-          alt="Logo decorativa Growen"
-          className="w-90 opacity-10"
-          width="360"
-          height="100"
-          fetchPriority="high"
-        />
-      </div>
-
-
-      <div className="absolute -top-24 -right-28 z-10 pointer-events-none select-none hidden lg:block">
-        <img
-          src="/arquivos/logo.webp"
-          alt="Logo decorativa Growen"
-          className="w-103.75 opacity-10"
-          loading="lazy"
-          width="415"
-          height="100"
-          style={{
-            transform: 'rotate(180deg)',
-            maskImage: 'linear-gradient(315deg, black 60%, transparent 100%)',
-            WebkitMaskImage:
-              'linear-gradient(315deg, black 60%, transparent 100%)',
-          }}
-        />
-      </div>
-
-
-
-
-
-
+    <section className="relative min-h-svh flex items-center overflow-hidden bg-white isolate">
+      {/* Clean white background */}
+      <div className="absolute inset-0 z-0 bg-white" />
 
       {/* CONTAINER PRINCIPAL */}
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-6 md:px-12 lg:px-16 pt-36 md:pt-28 lg:pt-32 py-20 md:py-24 relative z-30">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* CONTEÚDO ESQUERDO */}
           <div className="relative flex flex-col items-start text-left px-2 sm:px-0">
-            <div
-              className="hidden sm:block absolute -bottom-40 -left-8 w-160 h-160 bg-cover bg-center bg-no-repeat opacity-30 pointer-events-none z-0 rounded-md"
-              style={{ backgroundImage: "url('/arquivos/fundo.webp')" }}
-            />
-
             <div className="relative z-10 space-y-6">
-              <Reveal>
-                <div className="mb-2">
-                  <h2 className="text-4xl font-satoshi font-black tracking-tighter text-white leading-none">
-                    Growen
-                  </h2>
-                  <span className="text-[10px] tracking-[0.4em] text-gray-400 font-bold uppercase block mt-1 ml-1">
-                    IDIOMAS
-                  </span>
-                </div>
-              </Reveal>
-
               <Reveal delay={200}>
-                <h1 className="text-5xl md:text-7xl font-satoshi font-bold leading-[1.05] tracking-tight text-white">
-                  <span className="block text-green-400">
-                    Pare de estudar inglês.
+                <h1 className="text-5xl md:text-[68px] font-fustat font-semibold leading-[105%] tracking-tighter text-[#204749]">
+                  <span className="block pb-1">
+                    <ShinyText
+                      text="Pare de estudar inglês."
+                      speed={2}
+                      delay={0}
+                      color="#16a34a"
+                      shineColor="#ffffff"
+                      spread={120}
+                      direction="left"
+                      yoyo={false}
+                      pauseOnHover={false}
+                      disabled={false}
+                    />
                   </span>
                   <span className="block">Comece a falar.</span>
                 </h1>
               </Reveal>
 
               <Reveal delay={400}>
-                <p className="text-gray-400 text-base md:text-lg max-w-full sm:max-w-lg leading-relaxed font-questrial">
-                  Aprenda inglês falando, errando e evoluindo. Curso de inglês em <strong>Apucarana</strong> e online para quem está começando ou quer finalmente destravar a fala.
+                <p className="text-gray-500 text-lg md:text-xl max-w-full sm:max-w-lg leading-relaxed">
+                  Aprenda inglês falando, errando e evoluindo. Curso de inglês em <span className="text-gray-700 font-medium">Apucarana</span> e online para quem está começando ou quer finalmente destravar a fala.
                 </p>
               </Reveal>
 
-              <Reveal delay={600} className="pt-6">
-                <button
-                  onClick={() =>
-                    window.open(
-                      'https://wa.me/5543996536535?text=Olá!%20😊%0AGostaria%20de%20agendar%20uma%20aula%20teste%20gratuita%20de%20inglês.%20Poderia%20me%20passar%20mais%20informações?',
-                      '_blank',
-                      'noopener,noreferrer'
-                    )
-                  }
-                  aria-label="Agendar aula experimental gratuita pelo WhatsApp"
-                  className="group relative flex items-center gap-4 pl-6 pr-2 py-2 bg-green-500 hover:bg-green-600 text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
-                >
-                  <span className="font-satoshi font-bold text-lg tracking-wide">
-                    Agendar aula experimental gratuita
-                  </span>
-
-                  <div className="relative w-12 h-12 bg-black rounded-full flex items-center justify-center overflow-hidden">
-                    <ArrowRight className="w-6 h-6 text-white" />
-                  </div>
-                </button>
-
-                <div className="mt-4 space-y-1">
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <span className="text-green-400 font-bold">
-                      +300 alunos
+              <Reveal delay={600} className="pt-4">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button
+                    onClick={() =>
+                      window.open(
+                        'https://wa.me/5543996536535?text=Olá!%20😊%0AGostaria%20de%20agendar%20uma%20aula%20teste%20gratuita%20de%20inglês.%20Poderia%20me%20passar%20mais%20informações?',
+                        '_blank',
+                        'noopener,noreferrer'
+                      )
+                    }
+                    aria-label="Agendar aula experimental gratuita pelo WhatsApp"
+                    className="group relative flex items-center gap-3 pl-6 pr-2 py-2 bg-gray-900 hover:bg-gray-800 text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-xl hover:shadow-gray-900/20"
+                  >
+                    <span className="font-satoshi font-semibold text-base tracking-wide">
+                      Agendar aula gratuita
                     </span>
-                    <span>já falando inglês com a Growen</span>
+                    <div className="relative w-10 h-10 bg-green-500 rounded-full flex items-center justify-center overflow-hidden group-hover:bg-green-400 transition-colors">
+                      <ArrowRight className="w-5 h-5 text-white" />
+                    </div>
+                  </button>
+                  
+                  <button
+                    onClick={() => document.getElementById('solucoes')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-gray-900 font-medium transition-colors"
+                  >
+                    Conhecer método
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+
+                <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
+                  {/* Indicador de confiança com fotos reais */}
+                  <div className="flex items-center gap-3">
+                    <div className="flex -space-x-2">
+                      {TESTIMONIALS.slice(0, 5).map((t) => (
+                        <img 
+                          key={t.id}
+                          src={t.image} 
+                          alt={t.name}
+                          className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm"
+                        />
+                      ))}
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-green-600 flex items-center justify-center text-white text-xs font-bold shadow-sm">
+                        +50
+                      </div>
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="flex items-center gap-1">
+                        <div className="flex items-center gap-0.5">
+                          {[...Array(4)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                          {/* Meia estrela para 4.8 */}
+                          <div className="relative w-4 h-4">
+                            <Star className="w-4 h-4 text-gray-300" />
+                            <div className="absolute inset-0 overflow-hidden" style={{ width: '80%' }}>
+                              <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            </div>
+                          </div>
+                        </div>
+                        <span className="text-sm font-semibold text-gray-700 ml-1">4.8</span>
+                      </div>
+                      <span className="text-sm text-gray-500">Avaliação dos alunos</span>
+                    </div>
                   </div>
-                  <div className="text-sm text-gray-500">
-                    Aula teste gratuita • Sem compromisso
+                  
+                  <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
+                  
+                  <div className="flex flex-col">
+                    <span className="text-sm font-semibold text-gray-900">Aula teste gratuita</span>
+                    <span className="text-sm text-gray-500">Sem compromisso</span>
                   </div>
                 </div>
               </Reveal>
             </div>
           </div>
-
-
-
-
-
 
           {/* CONTEÚDO DIREITO */}
           <div className="relative flex justify-center lg:justify-end px-2 sm:px-0">
@@ -215,21 +184,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
               <img
                 src="/arquivos/MelvinM.webp"
                 alt="Mascote Growen"
-                className="w-full max-w-162.5 object-contain drop-shadow-2xl"
+                className="w-full max-w-[500px] object-contain"
                 fetchPriority="high"
                 width="650"
                 height="800"
-                style={{
-                  maskImage:
-                    'linear-gradient(to bottom, black 80%, transparent 100%)',
-                  WebkitMaskImage:
-                    'linear-gradient(to bottom, black 80%, transparent 100%)',
-                }}
               />
             </Reveal>
           </div>
         </div>
       </div>
+      
+      {/* Bottom fade to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-20" />
     </section>
   );
 };

@@ -15,7 +15,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
     <span className="text-[#15803d] font-bold tracking-widest uppercase text-xs mb-6 block">
       {label}
     </span>
-    <h2 className="text-3xl md:text-4xl font-satoshi font-bold mb-6 text-gray-900 leading-tight">
+    <h2 className="text-3xl md:text-4xl font-fustat font-semibold mb-6 text-[#204749] leading-tight tracking-tight">
       {title}
     </h2>
     {description && (

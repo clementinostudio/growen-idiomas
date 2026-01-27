@@ -14,7 +14,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onCTAClick }) => {
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center justify-center">
         <div className="text-center max-w-2xl">
           <Reveal>
-            <h2 className="text-4xl md:text-6xl font-satoshi font-black text-white mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-fustat font-semibold text-white mb-6 tracking-tight">
               Comece a falar.
             </h2>
           </Reveal>
