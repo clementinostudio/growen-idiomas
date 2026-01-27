@@ -21,7 +21,7 @@ export const IdentificationSection: React.FC = () => {
                   <>
                     Fale inglês com confiança,
                     <br />
-                    <span className="text-[#15803d]">
+                    <span className="text-[#22c55e]">
                       desde o primeiro dia.
                     </span>
                   </>
@@ -36,7 +36,7 @@ export const IdentificationSection: React.FC = () => {
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 group max-w-full sm:max-w-xl">
                     {/* Icon */}
                     <div className="shrink-0 pt-1">
-                      <point.icon className="w-6 h-6 text-gray-400 group-hover:text-[#15803d] transition-colors duration-200" />
+                      <point.icon className="w-6 h-6 text-gray-400 group-hover:text-[#22c55e] transition-colors duration-200" />
                     </div>
 
                     {/* Text */}

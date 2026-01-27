@@ -67,7 +67,7 @@ export const VisionSection: React.FC = () => {
                   delay={400 + i * 100}
                   className="flex items-start gap-4"
                 >
-                  <div className="p-3 rounded-lg bg-green-500/10 text-green-500">
+                  <div className="p-3 rounded-lg bg-[#22c55e]/10 text-[#22c55e]">
                     <item.icon size={24} />
                   </div>
                   <div>
@@ -94,7 +94,7 @@ export const VisionSection: React.FC = () => {
           <Reveal delay={500} className="relative flex justify-center lg:justify-end">
             <div className="relative">
               {/* Glow */}
-              <div className="absolute inset-0 bg-green-500/10 rounded-[3rem] blur-3xl" />
+              <div className="absolute inset-0 bg-[#22c55e]/10 rounded-[3rem] blur-3xl" />
 
               <img
                 src="/arquivos/preguizioportal.svg"
