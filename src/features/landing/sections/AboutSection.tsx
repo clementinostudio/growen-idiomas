@@ -238,7 +238,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreClick }) =>
           <div className="flex flex-col gap-8">
             <Reveal delay={300}>
               <img
-                src="/arquivos/MelvinMesa.svg"
+                src="/arquivos/Zara.svg"
                 alt="Mascote Growen"
                 onClick={onExploreClick}
                 className="w-full max-h-105 object-contain cursor-pointer hover:scale-[1.02] transition-transform"

@@ -59,7 +59,7 @@ export const IdentificationSection: React.FC = () => {
             <div className="relative w-full max-w-[90vw] sm:max-w-[620px]">
 
               <img
-                src="/arquivos/MelvinPunho.svg"
+                src="/arquivos/Melvinquem.svg"
                 alt="Mascote Growen"
                 className="w-full h-full object-contain drop-shadow-xl"
                 loading="lazy"
