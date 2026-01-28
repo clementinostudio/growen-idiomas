@@ -93,7 +93,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
               </Reveal>
 
               <Reveal delay={400}>
-                <p className="text-[#4C5267] font-interTight text-lg md:text-xl font-medium max-w-full sm:max-w-lg leading-relaxed">
+                <p className="text-[#4C5267] font-interTight text-base md:text-lg font-medium max-w-full sm:max-w-lg leading-relaxed">
                   Aprenda inglês falando, errando e evoluindo. Curso de inglês em <span className="text-[#204749] font-semibold">Apucarana</span> e online para quem está começando ou quer finalmente destravar a fala.
                 </p>
               </Reveal>
