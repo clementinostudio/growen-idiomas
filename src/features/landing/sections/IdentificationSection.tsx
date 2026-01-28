@@ -6,8 +6,15 @@ export const IdentificationSection: React.FC = () => {
   return (
     <section
       id="para-quem"
-      className="py-20 sm:py-28 md:py-32 bg-white overflow-hidden"
+      className="pt-4 sm:pt-6 pb-20 sm:pb-28 md:pb-32 bg-white overflow-hidden"
     >
+      {/* Linha divisória estilosa no topo */}
+      <div className="max-w-7xl mx-auto px-12 sm:px-10 md:px-12 lg:px-16 mb-10 sm:mb-14">
+        <div className="flex items-center">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+        </div>
+      </div>
+
       {/* Container com padding maior só no mobile */}
       <div className="max-w-7xl mx-auto px-12 sm:px-10 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-y-0 gap-x-12 items-center">

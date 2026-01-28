@@ -11,11 +11,11 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-[#050505]">
+    <section className="py-24 bg-white">
       {/* CONTAINER COM MESMO ESPAÇO LATERAL DO MOBILE */}
       <div className="max-w-2xl mx-auto px-12 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-fustat font-semibold mb-12 text-left text-white tracking-tight">
+          <h2 className="text-3xl font-fustat font-semibold mb-12 text-left text-gray-900 tracking-tight">
             Dúvidas Frequentes
           </h2>
         </Reveal>
@@ -24,7 +24,7 @@ export const FAQSection: React.FC = () => {
             const isOpen = openFaqIndex === index;
             return (
               <Reveal key={faq.id} delay={index * 50}>
-                <div className="border-b border-white/10 last:border-0">
+                <div className="border-b border-gray-200 last:border-0">
                   <button
                     onClick={() => toggleFaq(index)}
                     className="w-full flex items-center justify-between py-6 text-left group"
@@ -34,8 +34,8 @@ export const FAQSection: React.FC = () => {
                     <span
                       className={`font-medium text-lg transition-colors duration-300 ${
                         isOpen
-                          ? 'text-green-400'
-                          : 'text-gray-200 group-hover:text-white'
+                          ? 'text-[#22c55e]'
+                          : 'text-gray-700 group-hover:text-gray-900'
                       }`}
                     >
                       {faq.question}
@@ -49,8 +49,8 @@ export const FAQSection: React.FC = () => {
                       <ChevronDown
                         className={`w-5 h-5 ${
                           isOpen
-                            ? 'text-[#15803d]'
-                            : 'text-gray-500 group-hover:text-white'
+                            ? 'text-[#22c55e]'
+                            : 'text-gray-400 group-hover:text-gray-600'
                         }`}
                       />
                     </div>
@@ -67,7 +67,7 @@ export const FAQSection: React.FC = () => {
                     `}
                   >
                     <div className="overflow-hidden">
-                      <div className="pb-8 pr-8 text-gray-400 leading-relaxed font-light">
+                      <div className="pb-8 pr-8 text-gray-600 leading-relaxed font-light">
                         {faq.answer}
                       </div>
                     </div>
