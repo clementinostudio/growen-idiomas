@@ -74,9 +74,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
             <div className="relative z-10 space-y-6">
               <Reveal delay={200}>
                 <h1 className="text-5xl md:text-[68px] font-fustat font-semibold leading-[105%] tracking-tighter text-[#204749]">
-                  <span className="block pb-1">
+                  <span className="block pb-1">Pare de estudar inglês.</span>
+                  <span className="block">
                     <ShinyText
-                      text="Pare de estudar inglês."
+                      text="Comece a falar."
                       speed={2}
                       delay={0}
                       color="#22c55e"
@@ -88,7 +89,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
                       disabled={false}
                     />
                   </span>
-                  <span className="block">Comece a falar.</span>
                 </h1>
               </Reveal>
 

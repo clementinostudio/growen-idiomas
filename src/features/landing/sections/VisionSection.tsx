@@ -97,7 +97,7 @@ export const VisionSection: React.FC = () => {
               <div className="absolute inset-0 bg-[#22c55e]/10 rounded-[3rem] blur-3xl" />
 
               <img
-                src="/arquivos/preguizioportal.svg"
+                src="/arquivos/preguizio.svg"
                 alt="Mascote Growen"
                 className="relative w-full max-w-120 object-contain"
                 width="480"

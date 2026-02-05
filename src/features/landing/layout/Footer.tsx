@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
             >
               <WhatsAppIcon className="w-4 h-4" /> (43) 99653-6535
             </a>
-            <div>hello@growen.com</div>
+            <div>growenidiomas@gmail.com</div>
           </div>
         </div>
 
