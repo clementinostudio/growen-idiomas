@@ -1,16 +1,8 @@
 "use client"
 
 import React from 'react';
-import { Code, Camera, Palette, Zap, Star } from 'lucide-react';
 
-/**
- * SpinningLogos
- * - componente adaptado a partir do layout de orbes.
- * - usa as imagens em /amuletos como ícones e o logo em /arquivos/logoGrowen.svg
- */
 export const SpinningLogos: React.FC = () => {
-  const orbitCount = 3;
-  const orbitGap = 8; // rem entre órbitas
   const icons = [
     { img: '/amuletos/amuleto1.webp', alt: 'Amuleto 1' },
     { img: '/amuletos/amuleto2.webp', alt: 'Amuleto 2' },
@@ -22,62 +14,99 @@ export const SpinningLogos: React.FC = () => {
     { img: '/amuletos/amuleto8.webp', alt: 'Amuleto 8' },
   ];
 
-  const iconsPerOrbit = Math.ceil(icons.length / orbitCount);
+  // Divide os ícones em duas órbitas (4 em cada)
+  const orbits = [
+    icons.slice(0, 4),
+    icons.slice(4, 8)
+  ];
 
   return (
-    <div className="flex justify-center items-center p-6 w-full">
-      <div className="relative w-[36rem] h-[36rem]">
-        {/* Centro com logo (sem fundo) */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-          <img src="/arquivos/logoGrowen.svg" alt="Growen" className="w-28 h-28 object-contain" />
+    <div className="flex justify-center items-center min-h-[50rem] w-full overflow-hidden bg-transparent">
+      {/* Container Principal */}
+      <div className="relative flex items-center justify-center w-[45rem] h-[45rem]">
+        
+        {/* Logo Central Fixa */}
+        <div className="absolute z-50 pointer-events-none">
+          <img 
+            src="/arquivos/logoGrowen.svg" 
+            alt="Growen" 
+            className="w-24 h-24 object-contain" 
+          />
         </div>
 
-        {/* Orbits geradas dinamicamente */}
-        {[...Array(orbitCount)].map((_, orbitIdx) => {
-          const size = `${12 + orbitGap * (orbitIdx + 1)}rem`;
-          const animationDuration = 12 + orbitIdx * 6;
+        {/* Mapeamento das Órbitas */}
+          {orbits.map((orbitItems, orbitIdx) => {
+          const radius = orbitIdx === 0 ? 10 : 15; // Raio menor e raio maior (externa reduzida)
+          const duration = orbitIdx === 0 ? 30 : 45; // Velocidades diferentes
+          
+          // Lógica de direção: Órbita 0 (interna) normal, Órbita 1 (externa) reverse
+          const direction = orbitIdx % 2 === 0 ? 'normal' : 'reverse';
 
           return (
             <div
               key={orbitIdx}
-              className="absolute rounded-full border border-gray-200/30 dark:border-gray-700/20"
+              // borda menos tracejada (mais sólida e sutil)
+              className="absolute rounded-full border-2 border-solid border-gray-400/30 dark:border-gray-500/20"
               style={{
-                width: size,
-                height: size,
-                left: `calc(50% - ${parseFloat(size) / 2}rem)`,
-                top: `calc(50% - ${parseFloat(size) / 2}rem)`,
-                animation: `spin ${animationDuration}s linear infinite`,
-                animationDirection: orbitIdx % 2 === 1 ? 'reverse' : 'normal',
+                width: `${radius * 2}rem`,
+                height: `${radius * 2}rem`,
+                animation: `orbit ${duration}s linear infinite`,
+                animationDirection: direction,
+                transformOrigin: '50% 50%',
+                willChange: 'transform',
               }}
             >
-              {icons
-                .slice(orbitIdx * iconsPerOrbit, orbitIdx * iconsPerOrbit + iconsPerOrbit)
-                .map((it, iconIdx) => {
-                  const angleStep = (2 * Math.PI) / iconsPerOrbit;
-                  const angle = iconIdx * angleStep;
-                  const x = 50 + 50 * Math.cos(angle);
-                  const y = 50 + 50 * Math.sin(angle);
-
-                  return (
-                    <div
-                      key={iconIdx}
-                      className="absolute rounded-full shadow-sm overflow-hidden"
-                      style={{
-                        left: `${x}%`,
-                        top: `${y}%`,
-                        transform: 'translate(-50%, -50%)',
-                      }}
-                    >
-                      <img src={it.img} alt={it.alt} className="w-16 h-16 rounded-full object-cover" />
+              {orbitItems.map((it, iconIdx) => {
+                const angle = (iconIdx * (360 / orbitItems.length));
+                
+                return (
+                  <div
+                    key={iconIdx}
+                    className="absolute"
+                    style={{
+                      left: '50%',
+                      top: '50%',
+                      // Posicionamento no raio da órbita
+                      transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(-${radius}rem) rotate(-${angle}deg)`,
+                    }}
+                  >
+                    {/* Container do Amuleto */}
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-white shadow-lg overflow-hidden bg-white group hover:scale-110 transition-transform" style={{ transformStyle: 'preserve-3d' }}>
+                      <img 
+                        src={it.img} 
+                        alt={it.alt} 
+                        className="w-full h-full object-cover"
+                        style={{
+                            // Animação interna para manter a imagem sempre reta
+                            animation: `counterOrbit ${duration}s linear infinite`,
+                            // Se a órbita vai pra frente, a imagem compensa indo pra trás (e vice-versa)
+                            animationDirection: direction === 'normal' ? 'reverse' : 'normal',
+                            backfaceVisibility: 'hidden',
+                            willChange: 'transform',
+                            // Distribui os ícones ao longo da animação para evitar agrupamentos visuais
+                            animationDelay: `${-(angle / 360) * duration}s`,
+                        }}
+                      />
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
             </div>
           );
         })}
 
-        {/* Keyframes locais para animação */}
-        <style>{`\n          @keyframes spin {\n            from { transform: rotate(0deg); }\n            to { transform: rotate(360deg); }\n          }\n        `}</style>
+        {/* Definição Global dos Keyframes */}
+        <style>{`
+          @keyframes orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+
+          @keyframes counterOrbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+          }
+        `}</style>
       </div>
     </div>
   );
