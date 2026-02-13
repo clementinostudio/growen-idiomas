@@ -23,20 +23,23 @@ export const SpinningLogos: React.FC = () => {
   return (
     <div className="flex justify-center items-center min-h-[50rem] w-full overflow-hidden bg-transparent">
       {/* Container Principal */}
-      <div className="relative flex items-center justify-center w-[45rem] h-[45rem]">
+        <div
+          className="relative flex items-center justify-center w-[60rem] h-[60rem]"
+          style={{ transform: 'translate(50%, -20%)' }}
+        >
         
         {/* Logo Central Fixa */}
         <div className="absolute z-50 pointer-events-none">
-          <img 
-            src="/arquivos/logoGrowen.svg" 
-            alt="Growen" 
-            className="w-24 h-24 object-contain" 
+          <img
+            src="/arquivos/logoGrowen.svg"
+            alt="Growen"
+            className="w-48 h-48 md:w-64 md:h-64 object-contain"
           />
         </div>
 
         {/* Mapeamento das Órbitas */}
           {orbits.map((orbitItems, orbitIdx) => {
-          const radius = orbitIdx === 0 ? 10 : 15; // Raio menor e raio maior (externa reduzida)
+          const radius = orbitIdx === 0 ? 12 : 18; // aumentei os raios das órbitas
           const duration = orbitIdx === 0 ? 30 : 45; // Velocidades diferentes
           
           // Lógica de direção: Órbita 0 (interna) normal, Órbita 1 (externa) reverse
@@ -71,7 +74,7 @@ export const SpinningLogos: React.FC = () => {
                     }}
                   >
                     {/* Container do Amuleto */}
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-white shadow-lg overflow-hidden bg-white group hover:scale-110 transition-transform" style={{ transformStyle: 'preserve-3d' }}>
+                    <div className="w-14 h-14 md:w-20 md:h-20 rounded-full border-2 border-white shadow-lg overflow-hidden bg-white group hover:scale-110 transition-transform" style={{ transformStyle: 'preserve-3d' }}>
                       <img 
                         src={it.img} 
                         alt={it.alt} 

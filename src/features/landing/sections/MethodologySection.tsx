@@ -9,7 +9,7 @@ export const MethodologySection: React.FC = () => {
       className="py-28 md:py-32 bg-white relative overflow-hidden"
     >
       {/* Container com lateral maior no mobile */}
-      <div className="max-w-7xl mx-auto px-10 sm:px-12 md:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto pl-10 pr-0 sm:pl-12 sm:pr-0 md:pl-12 md:pr-0 lg:pl-16 lg:pr-0 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
           {/* LEFT: PHILOSOPHY */}
@@ -45,7 +45,7 @@ export const MethodologySection: React.FC = () => {
           </div>
 
           {/* RIGHT: PILLARS */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <div className="lg:col-span-7 flex flex-col justify-center lg:-mr-24">
             <Reveal delay={300}>
               <div className="scale-75 md:scale-90 origin-center">
                 <SpinningLogos />
