@@ -319,12 +319,12 @@ export const STEPS: Step[] = [
 
 export const PAIN_POINTS = [
   {
-    icon: ShieldCheck, 
+    icon: ShieldCheck,
     title: "Autoconfiança",
     description: "Para quem busca a tranquilidade de falar com naturalidade, transformando conhecimento em conversas com postura."
   },
   {
-    icon: Heart, 
+    icon: Heart,
     title: "Parceria",
     description: "Para quem procura um professor que seja um parceiro de jornada, focado e comprometido com o seu sucesso."
   },

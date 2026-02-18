@@ -182,7 +182,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
               className="relative z-20 w-full flex justify-center lg:justify-end"
             >
               <img
-                src="/arquivos/MelvinM.webp"
+                src="/arquivos/melvinefeito.svg"
                 alt="Mascote Growen"
                 className="w-full max-w-[420px] object-contain"
                 fetchPriority="high"
